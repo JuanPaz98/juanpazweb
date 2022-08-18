@@ -1,0 +1,77 @@
+
+@import "~swiper/css";
+@import "~swiper/css/pagination";
+@import "~swiper/css/navigation";
+
+.tecs-container{
+    padding: var(--padding);
+    text-align: center
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  z-index: 0;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 1.8em;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+.swiper-slide .slide-description {
+  display: none
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+.swiper-button-next::after{
+    font-size: 1.3em;
+    color: var(--blue)
+}
+.swiper-button-prev:after{
+    font-size: 1.3em;
+    color: var(--blue)
+}
+.swiper-pagination-bullet-active{
+    color: var(--blue)
+}
+
+//responsive para tablets
+
+@media (min-width: 768px){
+  .swiper-slide{
+    padding: 0 5rem;
+  }
+  .swiper-slide .slide-description {
+    display:block;
+    p{
+      text-align: justify;
+      font-size: calc(1em + 1vw)
+    }
+  }
+  
+}

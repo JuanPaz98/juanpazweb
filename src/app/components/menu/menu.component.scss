@@ -1,0 +1,226 @@
+
+.navbar-mobile{
+    width: 100%;
+    .bar{
+        position: fixed;
+        padding: var(--padding);
+        background: white;
+        width: 100%;
+        height: 11rem;
+        display: flex;
+        justify-content: space-between;
+        z-index: 2;
+        opacity: 1;
+        transition: background-color 0.5s;
+        figure{
+            right: 0;
+            width: 7rem;
+            height: 7rem;
+            img{
+                width: 100%
+            }
+        }
+    }
+    .bar.active{
+        background: transparent;
+        z-index: 2;
+        transition: background-color 0.3s;
+        figure{
+            display: none;
+        }
+    }
+
+}
+.menu-container{    
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--blue);    
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    
+}
+.menu-container.active {
+    transform: translateX(0);
+    transition: transform 0.3s;    
+    z-index: 1;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    li{
+        font-size: 3rem;
+        a{
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Kdam Thmor Pro', sans-serif
+        }
+    }    
+    
+}
+.boton{
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 3;
+}
+.boton::before {
+    position: absolute;
+    content: " ";
+    width: 4rem;
+    height: .5rem;
+    background: var(--blue);
+    transform: translateY(-.6rem);
+    transition: 0.5s;
+    margin-bottom: .7rem;
+}
+.boton::after {
+    position: absolute;
+    content: " ";
+    width: 4rem;
+    height: .5rem;
+    background: var(--blue);
+    transform: translateY(.6rem) ;
+    transition: 0.5s;
+    margin-top: .7rem;
+}
+.boton.active::before {
+    transform: translateY(0px) rotate(45deg);     
+    margin-bottom: 0;
+    background:rgba(255, 255, 255 , 1 )
+}
+.boton.active::after {
+    transform: translateY(0px) rotate(-45deg);      
+    margin-top: 0;
+    background:rgba(255, 255, 255 , 1 )
+} 
+
+.navbar-desk{
+    display: none;
+}
+
+//Responsive para Tablets
+@media (min-width: 768px){
+    .navbar-mobile{
+        .bar{
+            height: 13rem;
+            padding: var(--padding) var(--medium-padding);
+            figure{
+                width: 9rem;
+                height: 9rem;
+                img{
+                    width: 100%
+                }
+            }
+        }
+    }
+    .boton{
+        width: 9rem;
+        height: 9rem;
+    }
+    .boton::before{
+        width: 6rem;
+        height: .7rem;
+        margin-bottom: 1.3rem;
+    }
+    .boton::after{
+        width: 6rem;
+        height: .7rem;
+        margin-top: 1.3rem;
+    }
+    .boton.active{
+        width: 9rem;
+        height: 9rem;
+    }
+    .menu-container{       
+        nav{
+            ul{
+                li{
+                    font-size: 5em;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1024px){
+ 
+    .navbar-mobile{
+        display: none;
+    }
+    .menu-container{
+        display: none;
+    }
+    .navbar-desk{
+        min-width: 90%;
+        height: 10rem;
+        background: #fff;
+        position: fixed;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 2;
+        ul{
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            list-style: none;
+            li{
+                a{
+                    font-size: 2em;
+                    opacity: .7;
+                    color: var(--blue);
+                    text-decoration: none;
+                    font-family: 'Fira Sans', sans-serif;
+                    transition: all 0.4s ease;
+                }
+                a:hover{
+                    opacity: 1;
+                    padding: 5px 10px;
+                    font-weight: bold;
+                    background: var(--blue);
+                    color: #fff;
+                    border-radius: 15px;
+                }
+            }
+        }
+        figure{
+            min-width: 20rem;
+            height: 5rem;
+            background-color: var(--blue);
+            border-radius: 1.5rem;
+            a{
+                display: flex;
+                justify-content:center;
+                align-items: center;
+                min-width: 100%;
+                height: 100%;
+                overflow: hidden;
+                text-decoration: none;                
+                p{
+                    font-family: 'Kdam Thmor Pro', sans-serif;
+                    color: #fff;
+                    font-size: 2.5em;
+                    text-align: center;
+                }
+                img{
+
+                    height: 100%;
+                }                
+            }
+        }
+    }
+}

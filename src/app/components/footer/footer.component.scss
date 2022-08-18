@@ -1,0 +1,32 @@
+.footer{
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.iconos-redes {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    li{
+        margin: 0 .5rem;
+        opacity: 0.6;
+        img{
+            width: 6rem;
+        }
+    }
+    li:hover{
+        opacity: 1
+    }
+}
+.copyright{
+    color:gray;
+    opacity: .7;
+}
+
+@media (min-width: 1024px){
+    .footer{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,79 @@
+.projects{
+    padding: 0 var(--padding);
+    h2{
+        text-align: center;
+    }
+    p{
+        text-align: justify;
+    }
+}
+.card{
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+    height: 40rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    figure{
+        width: 100%;
+        height: 50%;
+        background-color: blue;
+    }
+    .description{
+        width: 100%;
+        padding: 1rem 1.5rem;
+        h3{
+            text-align:center;
+            font-size: calc(2em + 1vw);
+            font-family: 'Fira Sans', sans-serif;
+            color: var(--blue);
+        }
+    }
+    .buttons{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 15%;
+        button{
+            background: var(--blue);
+            color: white;
+            width: 50%;
+            height: 100%;
+            font-size: calc(2em + 1vw);
+            font-family: 'Kdam Thmor Pro', sans-serif;
+            
+        }
+    }
+}
+//Responsive para Tablets
+@media (min-width: 768px){
+    .projects{
+        padding: 0 var(--medium-padding)
+    }
+    .cards{
+        margin-top: 2rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+    .card{
+        height: 50rem;
+    }
+}
+@media (min-width: 1024px){
+    
+    .cards{
+        gap: 6rem;
+        .card{
+            .buttons{
+                button{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

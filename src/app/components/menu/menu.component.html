@@ -1,0 +1,32 @@
+<nav class="navbar-mobile">
+    <div class="bar" [class.active]="active">
+        <div class="boton" [class.active]="active" (click)="activeToggle()" ></div>
+        <figure>
+            <a href="https://api.whatsapp.com/send?phone=+573165808886&text=Hola%20Juan,%20v%C3%AD%20tu%20portafolio%20y%20quiero%20saber%20m%C3%A1s%20sobre%20T%C3%AD">
+            <img src="../../../assets/icons/wap.png" alt="escribeme al whatsapp">
+        </a>
+        </figure>
+    </div>
+    <ul class="menu-container" [class.active]="active">
+        <li class="home"><a href="#main" (click)="activeToggle()">Inicio</a></li>
+        <li class="about"><a href="#about" (click)="activeToggle()" >Sobre Mi</a></li>
+        <li class="skills"><a href="#skills" (click)="activeToggle()">Habilidades</a></li>
+        <li class="projects"><a href="#projects" (click)="activeToggle()">Proyectos</a></li> 
+    </ul>
+</nav>
+
+<nav class="navbar-desk">
+    <ul>
+        <li class="home"><a href="#main">Inicio</a></li>
+        <li class="about"><a href="#about">Sobre Mi</a></li>
+        <li class="skills"><a href="#skills">Habilidades</a></li>
+        <li class="projects"><a href="#projects">Proyectos</a></li>     
+    </ul>
+    <figure>
+        <a href="https://api.whatsapp.com/send?phone=+573165808886&text=Hola%20Juan,%20v%C3%AD%20tu%20portafolio%20y%20quiero%20saber%20m%C3%A1s%20sobre%20T%C3%AD">
+        <img src="../../../assets/icons/wap.png" alt="escribeme al whatsapp">
+        <p>Escríbeme</p>
+        </a>
+    </figure>
+</nav>
+

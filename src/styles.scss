@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+
+:root{
+    --blue: #00045B;
+    --padding: 2rem;
+    --medium-padding: 4rem;
+}
+section[id]{
+    scroll-margin-top: 10rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+h1{
+    font-size: calc(4em + 1vw);
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+h2{
+    font-size: calc(3em + 1vw);
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: var(--blue)
+}
+p{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: calc(1.6em + 1vw)
+}
+@media (min-width: 768px){
+    section[id]{
+        scroll-margin-top: 13rem;
+    }
+}
+@media (min-width: 1024px){
+    html{
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    section[id]{
+        scroll-margin-top: 10rem;
+    }
+}
