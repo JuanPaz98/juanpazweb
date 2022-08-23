@@ -29,6 +29,7 @@
         border-radius: 1rem;
         cursor: pointer;
         border: none;
+        text-decoration: none;
     }
     .download-cv{
         text-decoration: none;
@@ -49,6 +50,11 @@
             width: 60%;
             margin: 2rem auto;
             height: 6rem;
+        }
+        .btn-cv:hover{
+            -webkit-box-shadow: 0px 0px 11px 1px rgba(0,4,91,1);
+            -moz-box-shadow: 0px 0px 11px 1px rgba(0,4,91,1);
+            box-shadow: 0px 0px 11px 1px rgba(0,4,91,1);
         }
     }
 }
