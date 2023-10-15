@@ -1,52 +1,27 @@
 <section class="projects" id="projects">
-    <h2>Mis Proyectos</h2>
-    <p>A continuación algunos de mis proyectos personales, construidos con las tecnologías antes mencionadas:  </p>
+    <h2>{{translations.projects.title}}</h2>
+    <p>{{translations.projects.description}}</p>
     <div class="cards">
-
-        <div class="card">
-            <figure><img src="../../../assets/img/todolist.png" alt=""></figure>
-            <div class="description">
-                <h3>ToDo List</h3>
-                <p>Hecha con React. Creación, chequeo y eliminación de ToDos. Persistencia de datos con LocalStorage. </p>
+        <ng-container *ngFor="let project of projects">
+            <div class="card">
+                <figure><img src="{{project.image}}" alt=""></figure>
+                <div class="description">
+                    <h3>{{project.title}}</h3>
+                    <p>{{project.description}}</p>
+                </div>
+                <div class="buttons">
+                    <a href="{{project.linkProject}}">
+                        <button class="first">
+                            {{translations.button.link}}
+                        </button>
+                    </a>
+                    <a href="{{project.linkCode}}">
+                        <button class="second">
+                            {{translations.button.code}}
+                        </button>
+                    </a>
+                </div>
             </div>
-            <div class="buttons">
-                <a href="https://juanpaz98.github.io/curso-react/"><button class="first">Link</button></a>
-                <a href="https://github.com/JuanPaz98/curso-react"><button class="second">Code</button></a>
-            </div>
-        </div>
-        <div class="card">
-            <figure><img src="../../../assets/img/awesome heroes.png" alt=""></figure>
-            <div class="description">
-                <h3>Awesome Heroes</h3>
-                <p>Prueba técnica de sistema de votación sencillo. Elaborada en Angular (leer ReadMe en github). </p>
-            </div>
-            <div class="buttons">
-                <a href="https://juanpaz98.github.io/awesome-heroes/#"><button class="first">Link</button></a>
-                <a href="https://github.com/JuanPaz98/awesome-heroes"><button class="second">Code</button></a>
-            </div>
-        </div>
-        <div class="card">
-            <figure><img src="../../../assets/img/gifhub.png" alt=""></figure>
-            <div class="description">
-                <h3>GifHub</h3>
-                <p>Hecha con React. Buscador de gifs. Consumo de API y renderizado de peticiones. </p>
-            </div>
-            <div class="buttons">
-                <a href="https://juanpaz98.github.io/gifhub/"><button class="first">Link</button></a>
-                <a href="https://github.com/JuanPaz98/gifhub"><button class="second">Code</button></a>
-            </div>
-        </div>
-       
-        <div class="card">
-            <figure><img src="../../../assets/img/meli-clon.png" alt=""></figure>
-            <div class="description">
-                <h3>Meli Clon</h3>
-                <p>Mini clon de mercado libre. Proyecto en el cual me encuentro trabajando actualmente. </p>
-            </div>
-            <div class="buttons">
-                <a href="#"><button class="first">Link</button></a>
-                <a href="https://github.com/JuanPaz98/meli-clon"><button class="second">Code</button></a>
-            </div>
-        </div>
+        </ng-container>
     </div>
 </section>
