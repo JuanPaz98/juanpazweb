@@ -24,9 +24,9 @@
         [class.drop-down--active]="isDropDownClicked"
         (click)="onShowLanguageItems()">
         <div class="wrapper">
-            <img class="image-item" src="{{imageSource}}" alt="">
+            <img class="image-item" src="{{languageImgSource}}" alt="">
             <div class="selected">{{languageToShow}}</div>
-            <img class="arrow-down" src="../../../assets/icons/arrow-down.png" alt="">
+            <img class="arrow-down" src="{{arrowDownImgSource}}" alt="">
         </div>
         <div class="drop-down-list">
             <div class="list-item" (click)="onUpdateLanguage('english')">

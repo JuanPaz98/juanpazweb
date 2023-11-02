@@ -16,10 +16,11 @@ export class MenuComponent implements OnInit, OnDestroy  {
   public translations: any;
   public isDropDownClicked = false;
   public languageSelected: string = '';
-  public imageSource?: string;
+  public languageImgSource?: string;
   public languageToShow: string = '';
   public isFirstComponentInteraction = true;
   public themeImgSource?: string;
+  public arrowDownImgSource?: string;
   public themeSaved: string = 'light';
   private subscription: Subscription;
 
@@ -50,13 +51,13 @@ export class MenuComponent implements OnInit, OnDestroy  {
       this.languageService.setLanguage(LanguageEnum.ENG);
       this.languageToShow = this.translations.languages.english;
       this.languageSelected = LanguageEnum.ENG;
-      this.imageSource = '../../../assets/icons/eng.png'
+      this.languageImgSource = '../../../assets/icons/eng.png'
     } 
     else if (language == LanguageEnum.ESP) {
       this.languageService.setLanguage(LanguageEnum.ESP);
       this.languageToShow = this.translations.languages.spanish;
       this.languageSelected = LanguageEnum.ESP;
-      this.imageSource = '../../../assets/icons/esp.png'
+      this.languageImgSource = '../../../assets/icons/esp.png'
     }
   }
 
@@ -67,12 +68,14 @@ export class MenuComponent implements OnInit, OnDestroy  {
   public toggleTheme() {
     if (this.themeSaved == ThemeEnum.LIGHT) { 
       this.themeImgSource = '../../../assets/icons/moon.png'
+      this.arrowDownImgSource = '../../../assets/icons/arrow-down-dark.png'
       document.body.classList.remove(ThemeEnum.DARK);
       this.updateThemeInStorage(this.themeSaved);
       this.themeSaved = ThemeEnum.DARK;
     }
     else if (this.themeSaved == ThemeEnum.DARK) {
       this.themeImgSource = '../../../assets/icons/sun.png'
+      this.arrowDownImgSource = '../../../assets/icons/arrow-down-light.png'
       document.body.classList.add(ThemeEnum.DARK);
       this.updateThemeInStorage(this.themeSaved);
       this.themeSaved = ThemeEnum.LIGHT;
