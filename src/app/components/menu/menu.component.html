@@ -20,23 +20,36 @@
         <li class="home"><a href="#main">{{translations.menu.home}}</a></li>
         <li class="about"><a href="#about">{{translations.menu.about}}</a></li>
         <li class="skills"><a href="#skills">{{translations.menu.skills}}</a></li>
-        <li class="projects"><a href="#projects">{{translations.menu.projects}}</a></li>    
-        <li class="projects"> <a href="https://api.whatsapp.com/send?phone=+573165808886&text=Hola%20Juan,%20v%C3%AD%20tu%20portafolio%20y%20quiero%20saber%20m%C3%A1s%20sobre%20T%C3%AD">
-            {{translations.button.whatsapp}}
-        </a></li>    
+        <li class="projects"><a href="#projects">{{translations.menu.projects}}</a></li>
     </ul>
-    <select #languageSelect 
-        class="language-selector" 
-        name="language-selector" 
-        id="language-selector"
-        (change)="onChangeLanguage(languageSelect.value)"
-        (click)="onAddClass()">
-        <option class="language-selector-option" [value]="'spanish'">
-            {{translations.languages.spanish}}
-        </option>   
-        <option class="language-selector-option" [value]="'english'">
-            {{translations.languages.english}}
-        </option>
-    </select>
+
+    <div #dropdownListElement 
+        class="drop-down" 
+        [class.drop-down--active]="isDropDownClicked"
+        (click)="onShowLanguageItems()">
+        <div class="wrapper">
+            <img class="image-item" src="{{imageSource}}" alt="">
+            <div class="selected">{{languageToShow}}</div>
+            <img class="arrow-down" src="../../../assets/icons/arrow-down.png" alt="">
+        </div>
+        <div class="drop-down-list">
+            <div class="list-item" (click)="onUpdateLanguage('english')">
+                <img class="image-item" src="../../../assets/icons/eng.png" alt="">
+                <div>{{translations.languages.english}}</div>
+            </div>
+            <div class="list-item" (click)="onUpdateLanguage('spanish')">
+                <img class="image-item" src="../../../assets/icons/esp.png" alt="">
+                <div>{{translations.languages.spanish}}</div>
+            </div>
+        </div>
+    </div>
 </nav>
+<div class="toggle-theme">
+    <img class="image-theme" src="{{themeImgSource}}" alt="" (click)="toggleTheme()">
+</div>
+<div class="wap-container">
+    <a class="wap-link"  href="https://api.whatsapp.com/send?phone=+573165808886&text=Hola%20Juan,%20v%C3%AD%20tu%20portafolio%20y%20quiero%20saber%20m%C3%A1s%20sobre%20T%C3%AD">
+        <img class="wap-image" src="../../../assets/icons/whatsapp.png" alt="">
+    </a>
+</div>
 

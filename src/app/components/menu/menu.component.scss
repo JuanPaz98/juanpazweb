@@ -156,7 +156,7 @@
         }
     }
 }
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
  
     .navbar-mobile{
         display: none;
@@ -167,22 +167,20 @@
     .navbar-desk{
         min-width: 90%;
         height: 10rem;
-        background: #fff;
         position: fixed;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-end;
         align-items: center;
         z-index: 2;
         ul{
             display: flex;
-            width: 100%;
+            width: 50%;
             justify-content: space-evenly;
             list-style: none;
             li{
                 a {
                     font-size: 2em;
                     opacity: .7;
-                    color: var(--blue);
                     text-decoration: none;
                     font-family: 'Fira Sans', sans-serif;
                     transition: all 0.4s ease;
@@ -197,25 +195,62 @@
                 }
             }
         }
-        .language-selector {
-            border: 1px solid var(--blue);
-            border-radius: 10px;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 2em;
-            opacity: .7;
-            color: var(--blue);
-            text-decoration: none;
+        .drop-down {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+           // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 16rem;
+            height: 4rem;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
             font-family: 'Fira Sans', sans-serif;
-            .language-selector-option {
-                border-radius: 10px;
-                background-color: blue;
+            color: var(--blue);
+            font-size: 2em;
+            cursor: pointer;
+            &:hover {
+                transition: all 0.3s;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             }
-        }
-        .language-selector--clicked {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
+            .image-item {
+                width: 1.5em;
+            }
+            .wrapper {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                .arrow-down {
+                    // TODO: white in dark mode
+                }
+            }
+            .drop-down-list {
+                background-color: #fff;
+                position: absolute;
+                top: 4rem;
+                left: 0;
+                border-radius: 0 0 5px 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                cursor: pointer;
+                height: fit-content;
+                width: 100%;
+                display: none;
+                .list-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 0.5rem 1rem;
+                }
+            }
+        }    
+        .drop-down--active {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            .drop-down-list {
+                transition: all 0.3s;
+                display: block;
+            }
+        }   
         figure{
             min-width: 20rem;
             height: 5rem;
@@ -240,6 +275,32 @@
                     height: 100%;
                 }                
             }
+        }
+    }
+    .toggle-theme {
+        position: fixed;
+        width: 6em;
+        height: 6em;
+        bottom: 9em;
+        right: 3em;
+        background-color: var(--blue);
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        z-index: 3;
+        .image-theme {
+            width: 4em;
+            height: 4em;
+        }
+    }
+    .wap-container {
+        position: fixed;
+        bottom: 2em;
+        right: 3em;
+        z-index: 3;
+        .wap-image {
+            width: 6em;
         }
     }
 }

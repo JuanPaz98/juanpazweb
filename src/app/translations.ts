@@ -52,10 +52,11 @@ export const translations = {
             whatsapp: 'Write me'
         },
         languages: {
-            english: 'En-US',
-            spanish: 'Es-ES',
+            english: 'English',
+            spanish: 'Spanish',
         }
     },
+
     spanish: {
         menu: {
             home: 'Inicio',
@@ -108,8 +109,8 @@ export const translations = {
             whatsapp: 'Escríbeme'
         },
         languages: {
-            english: 'En-US',
-            spanish: 'Es-ES',
+            english: 'Inglés',
+            spanish: 'Español',
         }
     }
 };
