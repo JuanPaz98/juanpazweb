@@ -2,6 +2,7 @@ import { Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/services/language.service';
 import { LanguageEnum } from './enums/languages.enum';
+import { ThemeEnum } from './enums/theme.enum';
 
 @Component({
   selector: 'app-menu',
@@ -19,9 +20,10 @@ export class MenuComponent implements OnInit, OnDestroy  {
   public languageToShow: string = '';
   public isFirstComponentInteraction = true;
   public themeImgSource?: string;
+  public themeSaved: string = 'light';
   private subscription: Subscription;
 
-  @ViewChild('dropdownListElement') dropdownListEl?: ElementRef;
+  @ViewChild('dropdownListElement') dropdownListElement?: ElementRef;
 
   constructor(
     private languageService: LanguageService,
@@ -32,18 +34,7 @@ export class MenuComponent implements OnInit, OnDestroy  {
   }
 
   public ngOnInit(): void {
-    this.themeImgSource = '../../../assets/icons/moon.png'
-    this.languageSelected = this.languageService.getLanguageFromStorage()
-    this.onUpdateLanguage(this.languageSelected);
-    document.addEventListener('click', (event) => {
-      if (this.isDropDownClicked) {
-        const target = event.target as HTMLElement;
-        if (this.dropdownListEl && !this.dropdownListEl.nativeElement.contains(target)) {
-          this.renderer.removeClass(this.dropdownListEl.nativeElement, 'drop-down--active');
-          this.isDropDownClicked = false;
-        }
-      }
-    })  
+    this.internalInit();
   }
 
   public onActiveToggle(){
@@ -74,10 +65,49 @@ export class MenuComponent implements OnInit, OnDestroy  {
   }
 
   public toggleTheme() {
-    this.themeImgSource == '../../../assets/icons/moon.png'
-    ? this.themeImgSource = '../../../assets/icons/sun.png'
-    : this.themeImgSource = '../../../assets/icons/moon.png';
-    document.body.classList.toggle('dark') 
+    if (this.themeSaved == ThemeEnum.LIGHT) { 
+      this.themeImgSource = '../../../assets/icons/moon.png'
+      document.body.classList.remove(ThemeEnum.DARK);
+      this.updateThemeInStorage(this.themeSaved);
+      this.themeSaved = ThemeEnum.DARK;
+    }
+    else if (this.themeSaved == ThemeEnum.DARK) {
+      this.themeImgSource = '../../../assets/icons/sun.png'
+      document.body.classList.add(ThemeEnum.DARK);
+      this.updateThemeInStorage(this.themeSaved);
+      this.themeSaved = ThemeEnum.LIGHT;
+    }
   }
 
+  protected updateThemeInStorage(theme: string) {
+    localStorage.setItem('theme', theme);
+  }
+
+  protected updateTheme() {
+    this.themeSaved = localStorage.getItem('theme') || ThemeEnum.LIGHT;
+    this.toggleTheme();
+  }
+  
+  protected updateLanguage() {
+    this.languageSelected = this.languageService.getLanguageFromStorage()
+    this.onUpdateLanguage(this.languageSelected);
+  }
+
+  protected dropDownListClickOutsideListener() {
+    document.addEventListener('click', (event) => {
+      if (this.isDropDownClicked) {
+        const target = event.target as HTMLElement;
+        if (this.dropdownListElement && !this.dropdownListElement.nativeElement.contains(target)) {
+          this.renderer.removeClass(this.dropdownListElement.nativeElement, 'drop-down--active');
+          this.isDropDownClicked = false;
+        }
+      }
+    }) 
+  }
+
+  protected internalInit() {
+    this.updateTheme();
+    this.updateLanguage();
+    this.dropDownListClickOutsideListener();
+  }
 }

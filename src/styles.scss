@@ -13,6 +13,7 @@
     --black: #000000
 }
 body {
+    transition: all 0.3s;
     background-color: var(--white);
     h1,h2 {
         color: var(--blue) !important;
@@ -20,18 +21,80 @@ body {
     p {
         color: var(--black);
     }
-    .swiper-slide {
+    .drop-down {
         background-color: var(--white);
+        color: var(--blue);
+        transition: 0.3s;
+        .drop-down-list {
+            background-color: var(--white);
+            color: var(--blue);
+            box-shadow: 0 4px 8px rgba(76, 66, 66, 0.3);
+        } &:hover {
+            box-shadow: 0 4px 8px rgba(76, 66, 66, 0.3);
+        }
+    }
+    .drop-down--active {
+        box-shadow: 0 4px 8px rgba(76, 66, 66, 0.3);
+    }
+    .swiper-slide {
+       background-color: transparent;
+    }
+    .bar {
+        background-color: var(--white);
+        transition: 0.3s;
+    }
+    .open-btn::before, .open-btn::after {
+        background-color: var(--blue);
+    }
+    .close-btn.active::before, .close-btn.active::after {
+        background-color: var(--blue);
+    }
+    .menu-container {
+        background-color: var(--white);
+    }
+    .menu-container.active {
+        li {
+            a {
+                color: var(--blue)
+            }
+        }
     }
     .navbar-desk{
         background-color: var(--white);
+        transition: 0.3s;
         ul {
             li {
                 a {
                     color: var(--black);
+                } 
+                a:hover {
+                    background: var(--blue);
+                    color: var(--white);
+                    border-radius: 15px;
                 }
             }
         }
+    }
+    .btn-cv {
+        background-color: var(--blue);
+        color: var(--white);
+    }
+    .btn-cv:hover{
+        box-shadow: 0px 0px 11px 1px rgba(0,4,91,1);
+    }
+    .btn-projects-container, .link-projects {
+        background-color: var(--blue);
+        color: var(--white);
+    }
+    .card {
+        box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    }
+    .toggle-theme {
+        transition: all 0.3s;
+        background-color: var(--blue);
+    }
+    .toggle-theme:hover {
+        box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
     }
 }
 section[id]{
@@ -75,6 +138,7 @@ p{
 }
 
 body.dark {
+    transition: all 0.3s;
     background-color: var(--body-dark-bg);
     h1,h2 {
         color: var(--light-blue) !important;
@@ -82,17 +146,80 @@ body.dark {
     p {
         color: var(--white);
     }
-    .swiper-slide {
+    .drop-down {
         background-color: var(--body-dark-bg);
+        color: var(--white);
+        transition: 0.3s;
+        .drop-down-list {
+            background-color: var(--body-dark-bg);
+            color: var(--white);
+            box-shadow: 0 4px 8px rgba(255, 255, 255);
+        } &:hover {
+            box-shadow: 0 0px 10px rgba(255, 255, 255);
+        }
+    }
+    .drop-down--active {
+        box-shadow: 0 0px 8px rgba(255, 255, 255);
+    }
+    .swiper-slide {
+        background-color: transparent;
+    }
+    .bar {
+        background-color: var(--body-dark-bg);
+        transition: 0.3s;
+    }
+    .open-btn::before, .open-btn::after {
+        background-color: var(--white);
+    }
+    .close-btn.active::before, .close-btn.active::after {
+        background-color: var(--white);
+    }
+    .menu-container {
+        background-color: var(--body-dark-bg);
+    }
+    .menu-container.active {
+        li {
+            a {
+                color: var(--white)
+            }
+        }
     }
     .navbar-desk{
         background-color: var(--body-dark-bg);
+        transition: 0.3s;
         ul {
             li {
                 a {
                     color: var(--white);
+                } 
+                a:hover {
+                    background: var(--light-blue);
+                    color: var(--white);
+                    border-radius: 15px;
                 }
             }
         }
+    }
+    .btn-cv {
+        background-color: var(--light-blue);
+        color: var(--white);
+    }
+    .btn-cv:hover{
+        box-shadow: 0px 0px 11px 1px rgb(255, 255, 255);
+    }
+    .btn-projects-container, .link-projects {
+        background-color: var(--light-blue);
+        color: var(--white);
+    }
+    .card {
+        box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.75);
+    }
+    .toggle-theme {
+        transition: all 0.3s;
+        background-color: var(--light-blue);
+    }
+    .toggle-theme:hover {
+        box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.75);
     }
 }
