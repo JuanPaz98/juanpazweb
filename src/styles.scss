@@ -13,6 +13,8 @@
     --black: #000000
 }
 body {
+    max-width: 1300px;
+    margin: 0 auto;
     transition: all 0.3s;
     background-color: var(--white);
     h1,h2 {
@@ -82,9 +84,12 @@ body {
     .btn-cv:hover{
         box-shadow: 0px 0px 11px 1px rgba(0,4,91,1);
     }
-    .btn-projects-container, .link-projects {
+    .btn-projects-container .btn-projects .link-projects {
         background-color: var(--blue);
         color: var(--white);
+    }
+    .btn-projects-container .btn-projects .link-projects:hover {
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.7);
     }
     .card {
         box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
@@ -95,6 +100,23 @@ body {
     }
     .toggle-theme:hover {
         box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    }
+    .project-container {
+        box-shadow: 0px 0px 15px -8px rgba(0,0,0,0.75);
+    }
+    .swiper-container {
+        .swiper-button-next, .swiper-button-prev {
+            background-color: var(--blue);
+        }
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            box-shadow: 0 5px 8px rgba(76, 66, 66, 0.3);
+        }
+        .swiper-pagination .swiper-pagination-bullet {
+            background-color: rgb(162, 162, 162);
+        } 
+        .swiper-pagination .swiper-pagination-bullet-active {
+            background-color: var(--blue);
+        } 
     }
 }
 section[id]{
@@ -118,6 +140,10 @@ h2{
     font-family: 'Kdam Thmor Pro', sans-serif;
     color: var(--blue)
 }
+h3 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: calc(1em + 1vw)
+}
 p{
     font-family: 'Fira Sans', sans-serif;
     font-size: calc(1.6em + 1vw)
@@ -125,6 +151,10 @@ p{
 @media (min-width: 768px){
     section[id]{
         scroll-margin-top: 13rem;
+    }
+    p{
+        font-family: 'Fira Sans', sans-serif;
+        font-size: calc(1.1em + 1vw)
     }
 }
 @media (min-width: 1024px){
@@ -143,7 +173,7 @@ body.dark {
     h1,h2 {
         color: var(--light-blue) !important;
     }
-    p {
+    p, h3, span {
         color: var(--white);
     }
     .drop-down {
@@ -207,9 +237,12 @@ body.dark {
     .btn-cv:hover{
         box-shadow: 0px 0px 11px 1px rgb(255, 255, 255);
     }
-    .btn-projects-container, .link-projects {
+    .btn-projects-container .btn-projects .link-projects {
         background-color: var(--light-blue);
         color: var(--white);
+    }
+    .btn-projects-container .btn-projects .link-projects:hover {
+        box-shadow: 0 0px 10px rgba(255, 255, 255);
     }
     .card {
         box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.75);
@@ -219,7 +252,25 @@ body.dark {
         background-color: var(--light-blue);
     }
     .toggle-theme:hover {
-        box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
         box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.75);
+    }
+
+    .project-container {
+        box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.75);
+    }
+
+    .swiper-container {
+        .swiper-button-next, .swiper-button-prev {
+            background-color: var(--light-blue);
+        }
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            box-shadow: 0 5px 8px rgba(76, 66, 66, 0.3);
+        }
+        .swiper-pagination .swiper-pagination-bullet {
+            background-color: rgb(162, 162, 162);
+        } 
+        .swiper-pagination .swiper-pagination-bullet-active {
+            background-color: var(--light-blue);
+        } 
     }
 }

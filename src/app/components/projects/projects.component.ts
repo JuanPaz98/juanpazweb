@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subscription } from 'rxjs';
+import SwiperCore, { Pagination, Navigation } from "swiper";
 import { LanguageService } from 'src/app/services/language.service';
 
+SwiperCore.use([Pagination, Navigation]);
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  styleUrls: ['./projects.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProjectsComponent {
 
@@ -30,13 +33,6 @@ export class ProjectsComponent {
           description: this.translations.projects.second.description,
           linkProject: 'https://juanpaz98.github.io/awesome-heroes/#',
           linkCode: 'https://github.com/JuanPaz98/awesome-heroes'
-        },
-        {
-          image : '../../../assets/img/gifhub.png',
-          title: this.translations.projects.third.title,
-          description: this.translations.projects.third.description,
-          linkProject: 'https://juanpaz98.github.io/gifhub/',
-          linkCode: 'https://github.com/JuanPaz98/gifhub'
         },
         {
           image : '../../../assets/img/meli-clon.png',

@@ -1,27 +1,41 @@
 <section class="projects" id="projects">
-    <h2>{{translations.projects.title}}</h2>
-    <p>{{translations.projects.description}}</p>
-    <div class="cards">
-        <ng-container *ngFor="let project of projects">
-            <div class="card">
-                <figure><img src="{{project.image}}" alt=""></figure>
-                <div class="description">
-                    <h3>{{project.title}}</h3>
-                    <p>{{project.description}}</p>
+    <div class="projects-section">
+        <h2>{{translations.projects.title}}</h2>
+        <p>{{translations.projects.description}}</p>
+    </div>
+    <swiper
+    [slidesPerView]="1"
+    [spaceBetween]="20"
+    [loop]="true"
+    [pagination]="true"
+    [navigation]="true"
+    class="swiper-container">
+    <ng-container *ngFor="let project of projects">
+        <ng-template swiperSlide>
+            <div class="project-container">
+                <div class="left-column background-left-column">
+                    <img class="project-image" src="{{project.image}}" alt="">
                 </div>
-                <div class="btn-projects-container">
-                    <div class="btn-projects">
-                        <a class="link-projects" href="{{project.linkProject}}">
-                            {{translations.button.link}}
-                        </a>
+                <div class="right-column">
+                    <div class="project-description-container">
+                        <h3 class="project-title">{{project.title}}</h3>
+                        <p class="project-description">{{project.description}}</p>
                     </div>
-                    <div class="btn-projects">
-                        <a class="link-projects" href="{{project.linkCode}}">
-                            {{translations.button.code}}
+                    <div class="btn-projects-container">
+                        <a class="btn-projects" href="{{project.linkProject}}">
+                            <button class="link-projects">
+                                {{translations.button.link}}
+                            </button>
+                        </a>
+                        <a class="btn-projects" href="{{project.linkCode}}">
+                            <button class="link-projects">
+                                {{translations.button.code}}
+                            </button>
                         </a>
                     </div>
                 </div>
             </div>
-        </ng-container>
-    </div>
+        </ng-template>
+    </ng-container>
+</swiper>
 </section>

@@ -7,7 +7,7 @@ import { LanguageService } from "src/app/services/language.service";
 SwiperCore.use([Pagination, Navigation]);
 
 @Component({
-  selector: 'app-tecs',
+  selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss'],
   encapsulation: ViewEncapsulation.None

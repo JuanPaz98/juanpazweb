@@ -1,0 +1,16 @@
+.background {
+    padding: 0 var(--padding);
+
+}
+
+@media (min-width: 768px){
+    .background {
+        padding: 0 var( --medium-padding);
+    }
+}
+
+@media (min-width: 1024px){
+   .background {
+    padding-top: 3rem;
+   }
+}

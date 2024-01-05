@@ -1,3 +1,5 @@
+
+<!-- MOBILE NAVBAR -->
 <nav class="navbar-mobile">
     <div class="bar">
         <div class="open-btn" [class.active]="active" (click)="onActiveToggle()" ></div>
@@ -5,16 +7,23 @@
     <ul class="menu-container" [class.active]="active">
         <div class="close-btn" [class.active]="active" (click)="onActiveToggle()" ></div>
         <li class="home"><a href="#main" (click)="onActiveToggle()">{{translations.menu.home}}</a></li>
-        <li class="about"><a href="#about" (click)="onActiveToggle()" >{{translations.menu.about}}</a></li>
+        <li class="about"><a href="#about" (click)="onActiveToggle()">{{translations.menu.about}}</a></li>
+        <li class="experience"><a href="#experience" (click)="onActiveToggle()">Experience</a></li>
+        <li class="education"><a href="#education" (click)="onActiveToggle()">Education</a></li>
         <li class="skills"><a href="#skills" (click)="onActiveToggle()">{{translations.menu.skills}}</a></li>
         <li class="projects"><a href="#projects" (click)="onActiveToggle()">{{translations.menu.projects}}</a></li> 
     </ul>
 </nav>
 
+
+
+<!-- DESKTOP NAVBAR -->
 <nav class="navbar-desk">
     <ul>
         <li class="home"><a href="#main">{{translations.menu.home}}</a></li>
         <li class="about"><a href="#about">{{translations.menu.about}}</a></li>
+        <li class="experience"><a href="#experience">Experience</a></li>
+        <li class="education"><a href="#education">Education</a></li>
         <li class="skills"><a href="#skills">{{translations.menu.skills}}</a></li>
         <li class="projects"><a href="#projects">{{translations.menu.projects}}</a></li>
     </ul>

@@ -41,7 +41,6 @@
     li{
         font-size: 3rem;
         a{
-            
             text-decoration: none;
             font-family: 'Kdam Thmor Pro', sans-serif
         }
@@ -173,7 +172,9 @@
         display: none;
     }
     .navbar-desk{
-        min-width: 90%;
+        max-width: 1300px;
+        margin:  0 auto;
+        width: 90%;
         height: 10rem;
         position: fixed;
         display: flex;
@@ -182,7 +183,7 @@
         z-index: 2;
         ul{
             display: flex;
-            width: 50%;
+            width: 65%;
             justify-content: space-evenly;
             list-style: none;
             li{
