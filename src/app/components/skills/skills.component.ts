@@ -38,6 +38,14 @@ export class SkillsComponent {
           description: this.translations.skills.git
         },
         {
+          image : '../../../assets/icons/git-github.png',
+          description: this.translations.skills.git
+        },
+        {
+          image : '../../../assets/icons/git-github.png',
+          description: this.translations.skills.git
+        },
+        {
           image : '../../../assets/icons/nodejs.png',
           description: this.translations.skills.backend
         },

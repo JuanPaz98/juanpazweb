@@ -8,6 +8,7 @@
         height: 11rem;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         z-index: 2;
         opacity: 1;
     }
@@ -127,6 +128,57 @@
     display: none;
 }
 
+.drop-down {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 7em;
+    height: 2em;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 2em;
+    cursor: pointer;
+    &:hover {
+        transition: all 0.3s;
+    }
+    .image-item {
+        width: 1.5em;
+    }
+    .wrapper {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        .arrow-down {
+            // TODO: white in dark mode
+        }
+    }
+    .drop-down-list {
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        border-radius: 0 0 5px 5px;
+        
+        cursor: pointer;
+        height: fit-content;
+        width: 100%;
+        display: none;
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+}    
+.drop-down--active {
+    .drop-down-list {
+        transition: all 0.3s;
+        display: block;
+    }
+}   
+
 //Responsive para Tablets
 @media (min-width: 768px){
     .navbar-mobile{
@@ -167,6 +219,7 @@
  
     .navbar-mobile{
         display: none;
+        visibility: hidden
     }
     .menu-container{
         display: none;
@@ -201,66 +254,19 @@
                 }
             }
         }
-        .drop-down {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 7em;
-            height: 2em;
-            border-radius: 5px;
-            padding: 0.5rem 1rem;
-            font-family: 'Fira Sans', sans-serif;
-            font-size: 2em;
-            cursor: pointer;
-            &:hover {
-                transition: all 0.3s;
-            }
-            .image-item {
-                width: 1.5em;
-            }
-            .wrapper {
-                display: flex;
-                gap: 0.5rem;
-                align-items: center;
-                .arrow-down {
-                    // TODO: white in dark mode
-                }
-            }
-            .drop-down-list {
-                position: absolute;
-                top: 4rem;
-                left: 0;
-                border-radius: 0 0 5px 5px;
-                
-                cursor: pointer;
-                height: fit-content;
-                width: 100%;
-                display: none;
-                .list-item {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    padding: 0.5rem 1rem;
-                }
-            }
-        }    
-        .drop-down--active {
-            .drop-down-list {
-                transition: all 0.3s;
-                display: block;
-            }
-        }   
     }
     .toggle-theme {
         top: auto;
-        bottom: 9em;
-        right: 3em;
+        bottom: 6em;
+        right: 2.2em;
         z-index: 3;
+        width: 3.5em;
+        height: 3.5em;
+        border: none;
         cursor: pointer;
         .image-theme {
-            width: 4em;
-            height: 4em;
+            width: 70%;
+            height: 70%;
         }
     }
     .wap-container {
@@ -269,7 +275,57 @@
         right: 3em;
         z-index: 3;
         .wap-image {
-            width: 6em;
+            width: 4.5em;
         }
     }
+    .drop-down {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 7em;
+        height: 2em;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        font-family: 'Fira Sans', sans-serif;
+        font-size: 2em;
+        cursor: pointer;
+        &:hover {
+            transition: all 0.3s;
+        }
+        .image-item {
+            width: 1.5em;
+        }
+        .wrapper {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            .arrow-down {
+                // TODO: white in dark mode
+            }
+        }
+        .drop-down-list {
+            position: absolute;
+            top: 4rem;
+            left: 0;
+            border-radius: 0 0 5px 5px;
+            
+            cursor: pointer;
+            height: fit-content;
+            width: 100%;
+            display: none;
+            .list-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+    }    
+    .drop-down--active {
+        .drop-down-list {
+            transition: all 0.3s;
+            display: block;
+        }
+    }   
 }

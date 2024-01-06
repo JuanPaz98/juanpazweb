@@ -5,13 +5,15 @@
         </div>
 
         <div class="contents" *ngFor="let element of config.elements">
-            <div class="box">
-                <div class="element-header">
-                    <h3 class="element-title">{{element.title}}</h3>
-                    <span>{{element.initialDate}} - {{element.finalDate}}</span>
+            <div class="box-container">
+                <div class="box">
+                    <div class="element-header">
+                        <h3 class="element-title">{{element.title}}</h3>
+                        <span>{{element.initialDate}} - {{element.finalDate}}</span>
+                    </div>
+                    <h3 class="title-company">{{element.company}}</h3>
+                    <p class="element-description">{{element.description}}</p>
                 </div>
-                <h3 class="title-company">{{element.company}}</h3>
-                <p class="element-description">{{element.description}}</p>
             </div>
         </div>
     </section>

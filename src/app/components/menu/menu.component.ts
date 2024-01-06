@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/services/language.service';
 import { LanguageEnum } from './enums/languages.enum';
@@ -22,9 +22,10 @@ export class MenuComponent implements OnInit, OnDestroy  {
   public themeImgSource?: string;
   public arrowDownImgSource?: string;
   public themeSaved: string = 'light';
+  public screenWidth: any;
   private subscription: Subscription;
 
-  @ViewChild('dropdownListElement') dropdownListElement?: ElementRef;
+  @ViewChild('dropdownElement') dropdownElement?: ElementRef;
 
   constructor(
     private languageService: LanguageService,
@@ -98,19 +99,23 @@ export class MenuComponent implements OnInit, OnDestroy  {
 
   protected dropDownListClickOutsideListener() {
     document.addEventListener('click', (event) => {
-      if (this.isDropDownClicked) {
-        const target = event.target as HTMLElement;
-        if (this.dropdownListElement && !this.dropdownListElement.nativeElement.contains(target)) {
-          this.renderer.removeClass(this.dropdownListElement.nativeElement, 'drop-down--active');
-          this.isDropDownClicked = false;
-        }
+      const target = event.target as HTMLElement;
+      if (this.isDropDownClicked && this.dropdownElement && !this.dropdownElement.nativeElement.contains(target)) {
+        this.renderer.removeClass(this.dropdownElement.nativeElement, 'drop-down--active');
+        this.isDropDownClicked = false;
       }
     }) 
   }
 
   protected internalInit() {
+    this.screenWidth = window.innerWidth;
     this.updateTheme();
     this.updateLanguage();
     this.dropDownListClickOutsideListener();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.screenWidth = window.innerWidth;
   }
 }

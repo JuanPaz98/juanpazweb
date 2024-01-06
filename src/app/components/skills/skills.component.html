@@ -1,27 +1,11 @@
-<section class="tecs-container" id="skills">
+<section class="skills-container" id="skills">
     <h2>{{translations.skills.title}}</h2>
-    <!-- <swiper
-        [slidesPerView]="1"
-        [spaceBetween]="30"
-        [effect]="'cards'"
-        [loop]="true"
-        [pagination]="{ clickable: true }"
-        [navigation]="true"
-        class="mySwiper">
-        <ng-container *ngFor="let skill of skills">
-            <ng-template swiperSlide><img src="{{skill.image}}" alt="">
-                <div class="slide-description">
-                    <p>{{skill.description}}</p>
-                </div>
-            </ng-template>
-        </ng-container>
-    </swiper> -->
-
-    <ng-container *ngFor="let skill of skills">
-        <div><img src="{{skill.image}}" alt="">
-            <div class="slide-description">
-                <p>{{skill.description}}</p>
-            </div>
+    <div class="scroll">
+        <div class="skill-logo">
+            <img *ngFor="let skill of skills" src="{{skill.image}}">
         </div>
-    </ng-container>
+        <div class="skill-logo">
+            <img *ngFor="let skill of skills" src="{{skill.image}}">
+        </div>
+    </div>
 </section>

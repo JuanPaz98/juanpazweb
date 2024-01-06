@@ -1,34 +1,63 @@
 
 <!-- MOBILE NAVBAR -->
-<nav class="navbar-mobile">
-    <div class="bar">
-        <div class="open-btn" [class.active]="active" (click)="onActiveToggle()" ></div>
-    </div>
-    <ul class="menu-container" [class.active]="active">
-        <div class="close-btn" [class.active]="active" (click)="onActiveToggle()" ></div>
-        <li class="home"><a href="#main" (click)="onActiveToggle()">{{translations.menu.home}}</a></li>
-        <li class="about"><a href="#about" (click)="onActiveToggle()">{{translations.menu.about}}</a></li>
-        <li class="experience"><a href="#experience" (click)="onActiveToggle()">Experience</a></li>
-        <li class="education"><a href="#education" (click)="onActiveToggle()">Education</a></li>
-        <li class="skills"><a href="#skills" (click)="onActiveToggle()">{{translations.menu.skills}}</a></li>
-        <li class="projects"><a href="#projects" (click)="onActiveToggle()">{{translations.menu.projects}}</a></li> 
-    </ul>
-</nav>
-
+<ng-container *ngIf="screenWidth < 1024">
+    <nav class="navbar-mobile">
+        <div class="bar">
+            <div class="open-btn" [class.active]="active" (click)="onActiveToggle()" ></div>
+            <ng-container *ngTemplateOutlet="dropdownListElement"></ng-container>
+        </div>
+        <ul class="menu-container" [class.active]="active">
+            <div class="close-btn" [class.active]="active" (click)="onActiveToggle()" ></div>
+            <ng-container *ngTemplateOutlet="toggleThemeContainer"></ng-container>
+            <li class="home"><a href="#main" (click)="onActiveToggle()">{{translations.menu.home}}</a></li>
+            <li class="about"><a href="#about" (click)="onActiveToggle()">{{translations.menu.about}}</a></li>
+            <li class="experience"><a href="#experience" (click)="onActiveToggle()">Experience</a></li>
+            <li class="education"><a href="#education" (click)="onActiveToggle()">Education</a></li>
+            <li class="skills"><a href="#skills" (click)="onActiveToggle()">{{translations.menu.skills}}</a></li>
+            <li class="projects"><a href="#projects" (click)="onActiveToggle()">{{translations.menu.projects}}</a></li> 
+        </ul>
+    </nav>
+    <ng-container *ngTemplateOutlet="wapContainer"></ng-container>
+</ng-container>
 
 
 <!-- DESKTOP NAVBAR -->
-<nav class="navbar-desk">
-    <ul>
-        <li class="home"><a href="#main">{{translations.menu.home}}</a></li>
-        <li class="about"><a href="#about">{{translations.menu.about}}</a></li>
-        <li class="experience"><a href="#experience">Experience</a></li>
-        <li class="education"><a href="#education">Education</a></li>
-        <li class="skills"><a href="#skills">{{translations.menu.skills}}</a></li>
-        <li class="projects"><a href="#projects">{{translations.menu.projects}}</a></li>
-    </ul>
+<ng-container *ngIf="screenWidth >= 1024">
+    <nav class="navbar-desk">
+        <ul>
+            <li class="home"><a href="#main">{{translations.menu.home}}</a></li>
+            <li class="about"><a href="#about">{{translations.menu.about}}</a></li>
+            <li class="experience"><a href="#experience">Experience</a></li>
+            <li class="education"><a href="#education">Education</a></li>
+            <li class="skills"><a href="#skills">{{translations.menu.skills}}</a></li>
+            <li class="projects"><a href="#projects">{{translations.menu.projects}}</a></li>
+        </ul>
+        <ng-container *ngTemplateOutlet="dropdownListElement"></ng-container>
+        <ng-container *ngTemplateOutlet="toggleThemeContainer"></ng-container>
+        <ng-container *ngTemplateOutlet="wapContainer"></ng-container>
+    </nav>
+</ng-container>
 
-    <div #dropdownListElement 
+
+<!-- Toggle Theme Container template -->
+<ng-template #toggleThemeContainer>
+    <button class="toggle-theme"  (click)="toggleTheme()">
+        <img class="image-theme" src="{{themeImgSource}}">
+    </button>
+</ng-template>
+
+<!-- Whatsapp container template-->
+<ng-template #wapContainer>
+    <div class="wap-container">
+        <a class="wap-link"  href="https://api.whatsapp.com/send?phone=+573165808886&text=Hola%20Juan,%20v%C3%AD%20tu%20portafolio%20y%20quiero%20saber%20m%C3%A1s%20sobre%20T%C3%AD">
+            <img class="wap-image" src="../../../assets/icons/whatsapp.png" alt="">
+        </a>
+    </div>
+</ng-template>
+
+<!-- Language Dropdown template-->
+<ng-template #dropdownListElement>
+    <div #dropdownElement
         class="drop-down" 
         [class.drop-down--active]="isDropDownClicked"
         (click)="onShowLanguageItems()">
@@ -48,13 +77,4 @@
             </div>
         </div>
     </div>
-</nav>
-<div class="toggle-theme">
-    <img class="image-theme" src="{{themeImgSource}}" alt="" (click)="toggleTheme()">
-</div>
-<div class="wap-container">
-    <a class="wap-link"  href="https://api.whatsapp.com/send?phone=+573165808886&text=Hola%20Juan,%20v%C3%AD%20tu%20portafolio%20y%20quiero%20saber%20m%C3%A1s%20sobre%20T%C3%AD">
-        <img class="wap-image" src="../../../assets/icons/whatsapp.png" alt="">
-    </a>
-</div>
-
+</ng-template>
