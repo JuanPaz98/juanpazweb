@@ -4,46 +4,109 @@ export const translations = {
         menu: {
             home: 'Home',
             about: 'About',
-            skills: 'Skills',
+            experience: 'Experience',
+            education: 'Education',
             projects: 'Projects',
+            skills: 'Skills',
         },
         about: {
             title: 'About Me',
-            description: 'Im 23 years old, living in the city of Cali, Colombia, and Im a technology enthusiast, motorcycle lover, and a cat person. Currently, I work in the IT field as an IT support specialist. My primary interest is to venture into the world of professional programming and software development, taking on new challenges, gaining new experiences, and above all, growing in my career. I graduated from the MisiónTic 2022 program at the University of the North, an intensive bootcamp focused on web development. Throughout the program, I learned the fundamentals of programming with Python, explored object-oriented programming with Java, delved into databases using SQLite, and in the later phases, I learned web development, working with technologies like HTML, CSS, JavaScript, and React for the frontend, and Node.js and MongoDB for the backend. In addition, I gained knowledge in Git and GitHub, Scrum methodology, Figma, and strengthened my English skills. I continue my self-study, dedicating an average of 2 hours of study per day on platforms like Platzi, Udemy, and YouTube. Some of the skills and technologies Ive learned include the following...'
+            description: [
+                {
+                    paragraph: 'I am a Frontend Developer, I am 25 years old, living in the city of Cali, Colombia.'
+                },
+                {
+                    paragraph : 'Currently, I am in Newshore, a software company focused on airelines solutions. I work as a Frontend developer UI in the Master Product Team, developing features in the main pages and section such as home, promotes, banners, search, flights an passenger forms.'
+                },
+                {
+                    paragraph: 'I graduated from the MisiónTic 2022 program at the Universidad del Norte, an intensive bootcamp focused on web development. Throughout the program, I learned about python, HTML, CSS, JS, React, SQLite and proggramming logic ang problem solving.  I continue my self-study, dedicating time on platforms like YouTube, Platzi, and Udemy.'
+                },
+                {
+                    paragraph: 'My main goal for this year is get a full english job and increase my seniority.'
+                }
+            ]
         },
         main: {
-            mainTitle: 'I am Juan Paz',
-            description: 'Passionate Junior Frontend Developer with a love for web programming. I have over 8 months of experience working with technologies like HTML, CSS, and JavaScript, with Angular as my primary strength and basic knowledge in React.'
+            mainTitle: "I'm Juan Paz",
+            description: "Frontend Web Developer with over 2 years experience in core technologies such as HTML, CSS, and JS, with a strong focus primarily on Angular, which I work with on a daily basis. I also have knowledge in accessibility, Umbraco CMS and .Net. In terms of soft skills, I excel in empathy, commitment, and teamwork."
         },
+        background: [
+            {
+                mainTitle: 'Experience',
+                experienceList: [
+                    {
+                        title: 'Frontend Developer',
+                        company: 'Newshore',
+                        initialDate: 'Nov 2022',
+                        finalDate: 'Present',
+                        description: 'UI Developer in the Master Product area, responsible for developing features on the main pages and sections of the application, such as the home page, promotion pages, banners, flight selection, and passenger form. My primary responsibilities encompass: Development of user stories with client-requested requirements, adding value to the product. Creation of components, services, and some functionalities with Angular. To implement accessibility across various sections and components of our product. Creation of macros, repositories, and content in Umbraco CMS.'
+                    },
+                    {
+                        title: 'Information Technology Support Assistant',
+                        company: 'Quala S.A.',
+                        initialDate: 'Mar 2021',
+                        finalDate: 'Nov 2022',
+                        description: 'Provide remote and on-site support for computer equipment, mobile devices (Honeywell, Motorola-Zebra), and printing services for the Cali district and its agencies in Pasto and Popayán. Manage asset inventory and handle incident resolution and user requests.'
+                    },
+                    {
+                        title: 'SET Level 2 Support',
+                        company: 'ARUS',
+                        initialDate: 'Feb 2019',
+                        finalDate: 'Mar 2021',
+                        description: "Provide HelpDesk support and on-site assistance for computer and printer equipment at the client's headquarters (Fundación Valle del Lili). Proficient in Active Directory management, SAP handling, office applications, and delivering excellent customer service."
+                    }
+                ]
+            },{
+                mainTitle: 'Education',
+                educationList: [
+                    {
+                        title: 'Web Developer',
+                        initialDate: 'Mar 2021',
+                        finalDate: 'Dec 2021',
+                        description: 'Intensive bootcamp focused on web development. enphasys in technologies such as HTML, CSS, JavaScript, React, Python, Java and SQLite'
+                    },
+                    {
+                        title: 'Systems Technician',
+                        initialDate: 'Feb 2017',
+                        finalDate: 'Feb 2018',
+                        description: 'Emphasys in computer management, formatting, software installation, and supporting applications and operatives systems.'
+                    }
+                ]
+            }
+        ],
         skills: {
             title: 'Skills',
-            baseSkills: 'Base skills test',
-            typescript: 'TypeScript English',
-            angular: 'React ang Angular english test',
-            git: 'Git and github test english',
-            backend: 'Backend test blah blah blah blah blah blah blah blah blah blah blah blah',
-            api: 'API building blah blah english',
-            softSkills: 'SoftSkills in english test'  
+            description: 'My Technology stack',
+            html: 'Html',
+            css: 'Css',
+            typescript: 'Ts',
+            angular: 'Angular',
+            react:'React',
+            sass: 'Sass',
+            dotNet: 'Asp .Net',
+            umbraco: 'Umbraco',
+            azure: 'Azure',
+            scrum: 'Scrum',
+            git: 'Git',
+            sql: 'SQL'
         },
         projects: {
             title: 'My Projects',
-            description: 'My Projects description test',
-            first: {
-                title: 'ToDo List',
-                description: 'Doit with React, blah blah blah'
-            },
-            second: {
-                title: 'Awesome Heroes',
-                description: 'Technical test with Angular blah blah blah'
-            },
-            third: {
-                title: 'GifHub',
-                description: 'Did it with react blah blah blah'
-            },
-            fourth: {
-                title: 'Meli Clon',
-                description: 'Mini clon about MercadoLibre. So good,'
-            }
+            description: 'Sometimes I spend my free time in some personal projects. These are some of them:',
+            listOfProjects: [
+                { 
+                    project: {
+                        title: 'ToDo List',
+                        description: 'Basic ToDo list made with React saving data in local storage'
+                    }
+                },
+                { 
+                    project: {
+                        title: 'Meli Clon',
+                        description: 'Currently I am working on this project, It is a little Mercado Libre clon. Built in Angular and .Net'
+                    }
+                }
+            ]
         },
         button: {
             link: 'Link',
@@ -61,51 +124,113 @@ export const translations = {
         menu: {
             home: 'Inicio',
             about: 'Sobre Mi',
+            experience: 'Experiencia',
+            education: 'Educación',
+            projects: 'proyectos',
             skills: 'Habilidades',
-            projects: 'Proyectos',
         },
         about: {
             title: 'Sobre Mi',
-            description: 'Tengo 23 años, vivo en la ciudad de Cali-Colombia y soy un amante de la tecnología, las motos y los gatos. Actualmente, me desempeño en el rubro TI como soporte informático. Mi principal interés es incursionar en el mundo de la programación y desarrollo de software de manera profesional, afrontando nuevos retos, adquiriendo nuevas experiencias y sobre todo creciendo laboralmente. Soy egresado del programa MisiónTic 2022 en la Universidad del Norte, bootcamp intensivo de programación con énfasis en desarrollo web. A lo largo del programa aprendí los fundamentos de la programación con Python, aprendí sobre la programación orientada a objetos con Java, bases de datos con SQLite y finalmente en los últimos ciclos aprendí desarrollo web, manejando tecnologías como html, css, javascript y React, para el lado del cliente (Frontend) y NodeJs y MongoDB para el lado del servidor (Backend). De manera complementaria aprendí sobre GIT y Github, metodología scrum, Figma y fortalecí mi Inglés. Continuo mi formación de manera autodidacta, dedicando un promedio de 2 horas de estudio al día en plataformas como Platzi, Udemy y Youtube. Entre las habilidades y tecnologias que he aprendido se encuentran las siguientes...'
+            description: [
+                {
+                    paragraph: 'Soy Desarrollador Web Frontend, tengo 25 años y vivo en la ciudad de Cali, Colombia'
+                },
+                {
+                    paragraph : 'Actualmente estoy trabajando en Newshore, una empresa de desarrollo de software para aerolineas, mi rol es de Desarrollador UI, en el equipo de Master Product, desarrollando funcionalidades en las paginas principales como la home, las paginas de promociones, banners, el buscador, seleccion de vuelos y formulario de pasajeros.'
+                }, 
+                {
+                    paragraph : 'Soy egresado del programa MisiónTic 2022, en la Universidad del Norte. Bootcamp intensivo enfocado en el desarrollo web. Aqui aprendí sobre tecnologías como Python, HTML, CSS, JavaScript, React, SQLite, y adquirí bases de logica de programacion y resolucion de problemas. Continúo estudiando constantemente por mi cuenta aprendiendo cosas nuevas en plataformas como Youtube, Platzi y Udemy.'
+                },
+                {
+                    paragraph: 'Mi principal objetivo para este año es obtener un trabajo totalmente en ingles e incrementar mi seniority.'                
+                }
+            ]
         },
         main: {
             mainTitle: 'Soy Juan Paz',
-            description: 'Desarrollador Frontend Jr apasionado por la programación web. Actualmente, cuento con más de 8 meses trabajando con tecnologías como Html, Css y Javascript, con Angular como fortaleza principal y conocimiento básico en React. '
+            description: 'Desarrollador Frontend con más de 2 años de experiencia en tecnologías base como HTML, CSS, JS, con fortaleza principalmente en Angular, framework con el que trabajo diariamente. Adicional cuento con conocimientos en Accesibilidad, Umbraco CMS y .Net. En mis habilidades blandas destacan mi empatía, compromiso y trabajo en equipo.'
         },
+        background: [
+            {
+                mainTitle: 'Experiencia',
+                experienceList: [
+                    {
+                        title: 'Desarrollador Frontend',
+                        company: 'Newshore',
+                        initialDate: 'Nov 2022',
+                        finalDate: 'Presente',
+                        description: 'Desarrollador UI el el área de Master Product, responsable de desarrollar funcionalidades en las paginas principales como la home, paginas de promociones, banners, seleción de vuelos y formularios de pasajeros. Entre mis principales responsabilidadades se encuentran:  Desarrollar historias de usuario basado en los requerimientos del cliente agregando valor al producto. Creación de componentes, servicios y varias funcionalidades con Angular. Implementar accesibilidad en varias secciones y componentes del producto. Cración de macros, repositorios y contenido en umbraco CMS.'
+                    },
+                    {
+                        title: 'Auxiliar de soporte ténico',
+                        company: 'Quala S.A.',
+                        initialDate: 'Mar 2021',
+                        finalDate: 'Nov 2022',
+                        description: 'Brindar soporte ténico remoto y en sitio para equipos de computo, dispositivos moviles  (Honeywell, Motorola-Zebra), e impresion para el distrito Cali y sus agencias Pasto y Popayán. Manejo de inventario y solucion de incidentes y requerimientos de usuario.'
+                    },
+                    {
+                        title: 'SET Level 2 Support',
+                        company: 'ARUS',
+                        initialDate: 'Feb 2019',
+                        finalDate: 'Mar 2021',
+                        description: "Brindar soporte ténico remoto y en sitio para equipos de computo e impresoras a la sede cliente Valle del Lili. Manejo de directorio activo, SAP, aplicaciones de office y brindar un excelente servicio al cliente."
+                    }
+                ]
+            },{
+                mainTitle: 'Educación',
+                educationList: [
+                    {
+                        title: 'Desarrollador Web',
+                        initialDate: 'Mar 2021',
+                        finalDate: 'Dic 2021',
+                        description: 'Bootcamp intensivo enfocado en el desarrollo web con enfasis en tecnologias como HTML, CSS, JavaScript, React, Python, Java y SQLite.'
+                    },
+                    {
+                        title: 'Técnico en sistemas',
+                        initialDate: 'Feb 2017',
+                        finalDate: 'Feb 2018',
+                        description: 'Enfasis en manejo de equipos de computo, formateo, instalacion de software, y soporte a aplicaciones y sistemas operativos.'
+                    }
+                ]
+            }
+        ],
         skills: {
             title: 'Habilidades',
-            baseSkills: 'Html y Css como tecnologías base para la estructura, diseño y maquetación de páginas web. JavaScript como lenguaje de programación para establecer la lógica e interacción del usuario con la página. ',
-            typescript: 'TypeScript, mismo JavaScript, pero con "Superpoderes", contiene tipado, detección de errores en desarrollo y es un lenguaje orientado a objetos.',
-            angular: 'React, librería de JavaScript liviana y basada en componentes. Angular, Framework robusto con varios módulos, orientado a objetos y uso de TypeScript como lenguaje. Ambos excelentes herramientas para construir aplicaciones Web.',
-            git: 'Git para control de versiones de mis proyectos, donde guardo y documento los avances y modificaciones. Github, plataforma en la cual subo mis repositorios para tenerlos en la web y hacer deploy con github pages.',
-            backend: 'Conocimiento básico en Node, instalación de aplicaciones, paquetes y librerías. Uso de NPM para ejecución de scripts.',
-            api: 'Creación de mis propias APIS con Json-server y consumo de API Rest públicas para el desarrollo de mis proyectos personales, simulando de esta manera un backend.',
-            softSkills: 'Entre mis principales habilidades blandas se encuentran la resiliencia, la disciplina, el compromiso, la proactividad y la mejora constante.'
+            description: 'Mi Stack tecnológico',
+            html: 'Html',
+            css: 'Css',
+            typescript: 'Ts',
+            angular: 'Angular',
+            react:'React',
+            sass: 'Sass',
+            dotNet: 'Asp .Net',
+            umbraco: 'Umbraco',
+            azure: 'Azure',
+            scrum: 'Scrum',
+            git: 'Git',
         },
         projects: {
             title: 'Mis Proyectos',
-            description: 'A continuación algunos de mis proyectos personales, construidos con las tecnologías antes mencionadas:',
-            first: {
-                title: 'ToDo List',
-                description: 'Hecha con React. Creación, chequeo y eliminación de ToDos. Persistencia de datos con LocalStorage.'
-            },
-            second: {
-                title: 'Awesome Heroes',
-                description: 'Prueba técnica de sistema de votación sencillo. Elaborada en Angular (leer ReadMe en github).'
-            },
-            third: {
-                title: 'GifHub',
-                description: 'Hecha con React. Buscador de gifs. Consumo de API y renderizado de peticiones.'
-            },
-            fourth: {
-                title: 'Meli Clon',
-                description: 'Mini clon de mercado libre. Proyecto en el cual me encuentro trabajando actualmente. '
-            }
+            description: 'En ocasiones, suelo invertir mi tiempo libre en algunos projectos personales. Aqui algunos de ellos:',
+            listOfProjects: [
+                { 
+                    project: {
+                        title: 'ToDo List',
+                        description: 'Aplicación basica de tareas, hecha con React y guardado de informacion en local storage.'
+                    }
+                },
+                { 
+                    project: {
+                        title: 'Meli Clon',
+                        description: 'Actualmente estoy trabajando en este projecto. Es un pequeño clon de Mercado Libre. Construido en Angular y .Net'
+                    }
+                }
+            ]
         },
         button: {
             link: 'Enlace',
             code: 'Código',
-            download: 'Descargar CV',
+            download: 'Descargar HV',
             whatsapp: 'Escríbeme'
         },
         languages: {

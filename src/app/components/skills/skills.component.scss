@@ -8,25 +8,37 @@
         width: 90%;
         overflow: hidden;
         margin: 0 auto;
+        margin-top: 1em;
         -webkit-mask-image: linear-gradient(90deg, transparent, #fff, #fff, transparent);
         .skill-logo {
+            display: flex; 
             white-space: nowrap;
-            animation: animate 12s linear infinite;
-            animation-delay: calc(12s * -1);
-            img {
-                width: 12rem;
-                display: inline-flex;
-                margin: 5px;
-                transition: 0.3s;
-                filter: grayscale(100%);
-            }
-            img:hover {
-                filter: none;
+            animation: animate 20s linear infinite;
+            animation-delay: calc(20s * -1); 
+            .single-skill {
+                display: flex; 
+                flex-direction: column;
+                .skill-wrapper {
+                    text-align: center;
+                    margin: 2rem;
+                    width: 9rem;
+                    height: 10rem;
+                    .skill-image {
+                        width: 100%;
+                        display: inline-flex;
+                        transition: 0.3s;
+                    }
+                    .skill-description {
+                        display: block;
+                        font-weight: 600;
+                    }
+                    
+                }
             }
         }
         .skill-logo:nth-child(2) {
-            animation: animate2  12s linear infinite;
-            animation-delay: calc(12s / -2);
+            animation: animate2  20s linear infinite;
+            animation-delay: calc(20s / -2);
         }
         @keyframes animate {
             0% {
@@ -54,6 +66,39 @@
         padding: var(--medium-padding);
         .scroll {
             width: 95%;
+            .skill-logo {
+                animation: animate 15s linear infinite;
+                animation-delay: calc(15s * -1); 
+                .single-skill {
+                    .skill-wrapper {
+                        width: 10rem;
+                        height: 12rem;
+                        .skill-image {
+                            width: 100%;
+                            display: inline-flex;
+                            transition: 0.3s;
+                            filter: grayscale(100%);
+                        }
+                        .skill-description {
+                            display: none;
+                        }
+                        
+                    }
+                    .skill-wrapper:hover {
+                        .skill-image {
+                            filter: none;
+                        }
+                        .skill-description {
+                            display: block;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            .skill-logo:nth-child(2) {
+                animation: animate2  15s linear infinite;
+                animation-delay: calc(15s / -2);
+            }
         }
     }
 }

@@ -7,8 +7,8 @@
         <p> {{translations.main.description}}</p>
         <a class="download-cv" href="../../../assets/Jpaz.pdf" download="CV_JUAN_PAZ" target="_blank"class="btn-cv">{{translations.button.download}}</a>
         <ul class="media-icons ">
-            <li><a href="https://github.com/JuanPaz98" target="_blank"><img src="../../../assets/icons/github.png"  alt="Instagram"></a></li>
-            <li><a href="https://www.linkedin.com/in/juanpaz98" target="_blank"><img src="../../../assets/icons/linkedin.png"   alt="LinkedIn"></a></li>
+            <li><a href="https://github.com/JuanPaz98" target="_blank"><img [src]="isDarkTheme ? '../../../assets/icons/github-light.png' : '../../../assets/icons/github.png'"  alt="Instagram"></a></li>
+            <li><a href="https://www.linkedin.com/in/juanpaz98" target="_blank"><img [src]="isDarkTheme ? '../../../assets/icons/linkedin-light.png' : '../../../assets/icons/linkedin.png'"   alt="LinkedIn"></a></li>
         </ul>
     </div>
 </section>

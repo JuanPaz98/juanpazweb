@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { TimelineConfig } from 'src/app/models/timeline.config';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'experience',
@@ -7,39 +9,47 @@ import { TimelineConfig } from 'src/app/models/timeline.config';
   styleUrls: ['./background.component.scss']
 })
 
-export class BackgroundComponent implements OnInit {
+export class BackgroundComponent {
+  translations: any;
+  private subscription: Subscription
 
   public experienceConfig!: TimelineConfig;
   public educationConfig!: TimelineConfig;
 
-  ngOnInit(): void {
-    this.experienceConfig = this.buildExperienceConfig()
-    this.educationConfig = this.buildEducationConfig()
+  constructor(private languageService: LanguageService) {
+    this.subscription = this.languageService.getTranslations().subscribe((translations) => {
+      this.translations = translations;
+      this.experienceConfig = this.buildExperienceConfig()
+      this.educationConfig = this.buildEducationConfig()
+    });
+
   }
 
   buildExperienceConfig(): TimelineConfig {
     return {
-      mainTitle: 'Experience',
+      mainTitle: this.translations.background[0].mainTitle,
       elements: [
         {
-          title: 'Frontend Developer',
-          company: 'Newshore',
-          initialDate: 'Nov 2022',
-          finalDate: 'Present',
-          description: 'UI Developer in the Master Product area, responsible for developing features on the main pages and sections of the application, such as the home page, promotion pages, banners, flight selection, and passenger form. My primary responsibilities encompass: Development of user stories with client-requested requirements, adding value to the product. Creation of components, services, and some functionalities with Angular. To implement accessibility across various sections and components of our product. Creation of macros, repositories, and content in Umbraco CMS.'
+          title: this.translations.background[0].experienceList[0].title,
+          company: this.translations.background[0].experienceList[0].company,
+          initialDate: this.translations.background[0].experienceList[0].initialDate,
+          finalDate: this.translations.background[0].experienceList[0].finalDate,
+          description: this.translations.background[0].experienceList[0].description,
         },
         {
-          title: 'experiencia 2',
-          initialDate: 'background',
-          finalDate: 'background',
-          description: 'Background'
+          title: this.translations.background[0].experienceList[1].title,
+          company: this.translations.background[0].experienceList[1].company,
+          initialDate: this.translations.background[0].experienceList[1].initialDate,
+          finalDate: this.translations.background[0].experienceList[1].finalDate,
+          description: this.translations.background[0].experienceList[1].description,
         },
         {
-          title: 'experiencia 3',
-          initialDate: 'background',
-          finalDate: 'background',
-          description: 'Background'
-        }
+          title: this.translations.background[0].experienceList[2].title,
+          company: this.translations.background[0].experienceList[2].company,
+          initialDate: this.translations.background[0].experienceList[2].initialDate,
+          finalDate: this.translations.background[0].experienceList[2].finalDate,
+          description: this.translations.background[0].experienceList[2].description,
+        }        
       ]
     }
     
@@ -47,26 +57,22 @@ export class BackgroundComponent implements OnInit {
   
   buildEducationConfig(): TimelineConfig {
     return {
-      mainTitle: 'Education',
+      mainTitle: this.translations.background[1].mainTitle,
       elements: [
         {
-          title: 'Educacion 1',
-          initialDate: 'background',
-          finalDate: 'background',
-          description: 'Background'
+          title: this.translations.background[1].educationList[0].title,
+          company: this.translations.background[1].educationList[0].company,
+          initialDate: this.translations.background[1].educationList[0].initialDate,
+          finalDate: this.translations.background[1].educationList[0].finalDate,
+          description: this.translations.background[1].educationList[0].description,
         },
         {
-          title: 'Educacion 2',
-          initialDate: 'background',
-          finalDate: 'background',
-          description: 'Background'
+          title: this.translations.background[1].educationList[1].title,
+          company: this.translations.background[1].educationList[1].company,
+          initialDate: this.translations.background[1].educationList[1].initialDate,
+          finalDate: this.translations.background[1].educationList[1].finalDate,
+          description: this.translations.background[1].educationList[1].description,
         },
-        {
-          title: 'Educacion 3',
-          initialDate: 'background',
-          finalDate: 'background',
-          description: 'Background'
-        }
       ]
     }
     

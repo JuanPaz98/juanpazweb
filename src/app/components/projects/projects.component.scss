@@ -4,7 +4,10 @@
 
 .projects-section {
     padding-top: 3rem;
-    padding: 0 var(--padding)
+    padding: 0 var(--padding);
+    h2 {
+        margin-bottom: 0.5em;
+    }
 }
 .swiper-container{
     padding: 1rem;

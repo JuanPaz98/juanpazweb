@@ -1,6 +1,6 @@
 
 <!-- MOBILE NAVBAR -->
-<ng-container *ngIf="screenWidth < 1024">
+<ng-container *ngIf="isResponsive">
     <nav class="navbar-mobile">
         <div class="bar">
             <div class="open-btn" [class.active]="active" (click)="onActiveToggle()" ></div>
@@ -22,15 +22,15 @@
 
 
 <!-- DESKTOP NAVBAR -->
-<ng-container *ngIf="screenWidth >= 1024">
+<ng-container *ngIf="!isResponsive">
     <nav class="navbar-desk">
         <ul>
             <li class="home"><a href="#main">{{translations.menu.home}}</a></li>
             <li class="about"><a href="#about">{{translations.menu.about}}</a></li>
-            <li class="experience"><a href="#experience">Experience</a></li>
-            <li class="education"><a href="#education">Education</a></li>
-            <li class="skills"><a href="#skills">{{translations.menu.skills}}</a></li>
+            <li class="experience"><a href="#experience">{{translations.menu.experience}}</a></li>
+            <li class="education"><a href="#education">{{translations.menu.education}}</a></li>
             <li class="projects"><a href="#projects">{{translations.menu.projects}}</a></li>
+            <li class="skills"><a href="#skills">{{translations.menu.skills}}</a></li>
         </ul>
         <ng-container *ngTemplateOutlet="dropdownListElement"></ng-container>
         <ng-container *ngTemplateOutlet="wapContainer"></ng-container>
@@ -50,7 +50,7 @@
 <ng-template #wapContainer>
     <div class="wap-container">
         <a class="wap-link"  href="https://api.whatsapp.com/send?phone=+573165808886&text=Hola%20Juan,%20v%C3%AD%20tu%20portafolio%20y%20quiero%20saber%20m%C3%A1s%20sobre%20T%C3%AD">
-            <img class="wap-image" src="../../../assets/icons/whatsapp.png" alt="">
+            <img class="wap-image" src="../../../assets/icons/whatsapp.png">
         </a>
     </div>
 </ng-template>
@@ -67,14 +67,18 @@
             <img class="arrow-down" src="{{arrowDownImgSource}}" alt="">
         </div>
         <div class="drop-down-list">
-            <div class="list-item" (click)="onUpdateLanguage('english')">
-                <img class="image-item" src="../../../assets/icons/eng.png" alt="">
-                <div>{{translations.languages.english}}</div>
-            </div>
-            <div class="list-item" (click)="onUpdateLanguage('spanish')">
-                <img class="image-item" src="../../../assets/icons/esp.png" alt="">
-                <div>{{translations.languages.spanish}}</div>
-            </div>
+            <ng-container *ngIf="languageSelected === 'spanish'">
+                <div class="list-item" (click)="onUpdateLanguage('english')">
+                    <img class="image-item" src="../../../assets/icons/eng.png" alt="">
+                    <div>{{translations.languages.english}}</div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="languageSelected === 'english'">
+                <div class="list-item" (click)="onUpdateLanguage('spanish')">
+                    <img class="image-item" src="../../../assets/icons/esp.png" alt="">
+                    <div>{{translations.languages.spanish}}</div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </ng-template>

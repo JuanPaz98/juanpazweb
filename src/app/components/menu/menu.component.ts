@@ -1,8 +1,9 @@
 import { Component, ElementRef, HostListener, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/services/language.service';
 import { LanguageEnum } from './enums/languages.enum';
 import { ThemeEnum } from './enums/theme.enum';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-menu',
@@ -15,24 +16,31 @@ export class MenuComponent implements OnInit, OnDestroy  {
   public active = false;
   public translations: any;
   public isDropDownClicked = false;
-  public languageSelected: string = '';
+  public languageSelected: string = LanguageEnum.ENG;
   public languageImgSource?: string;
   public languageToShow: string = '';
-  public isFirstComponentInteraction = true;
   public themeImgSource?: string;
   public arrowDownImgSource?: string;
-  public themeSaved: string = 'light';
-  public screenWidth: any;
-  private subscription: Subscription;
+  public themeSaved: string = ThemeEnum.LIGHT;
+  public isResponsive: boolean = false;
+  private languageSubscription: Subscription;
+  private themeSubscription: Subscription;
 
   @ViewChild('dropdownElement') dropdownElement?: ElementRef;
 
-  constructor(
+  constructor (
     private languageService: LanguageService,
-    private renderer: Renderer2 ) {
-    this.subscription = this.languageService.getTranslations().subscribe((translations) => {
+    private themeService: ThemeService,
+    private renderer: Renderer2 
+    ) {
+    this.languageSubscription = this.languageService.getTranslations().subscribe((translations) => {
       this.translations = translations;
     })
+    this.themeSubscription = this.themeService.getTheme().subscribe((theme) => {
+      this.themeSaved = theme;
+      this.themeImgSource = this.themeService.themeImgSource;
+      this.arrowDownImgSource = this.themeService.arrowDownImgSource;
+    });
   }
 
   public ngOnInit(): void {
@@ -63,33 +71,12 @@ export class MenuComponent implements OnInit, OnDestroy  {
   }
 
   public ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.languageSubscription.unsubscribe();
+    this.themeSubscription.unsubscribe();
   }
 
   public toggleTheme() {
-    if (this.themeSaved == ThemeEnum.LIGHT) { 
-      this.themeImgSource = '../../../assets/icons/moon.png'
-      this.arrowDownImgSource = '../../../assets/icons/arrow-down-dark.png'
-      document.body.classList.remove(ThemeEnum.DARK);
-      this.updateThemeInStorage(this.themeSaved);
-      this.themeSaved = ThemeEnum.DARK;
-    }
-    else if (this.themeSaved == ThemeEnum.DARK) {
-      this.themeImgSource = '../../../assets/icons/sun.png'
-      this.arrowDownImgSource = '../../../assets/icons/arrow-down-light.png'
-      document.body.classList.add(ThemeEnum.DARK);
-      this.updateThemeInStorage(this.themeSaved);
-      this.themeSaved = ThemeEnum.LIGHT;
-    }
-  }
-
-  protected updateThemeInStorage(theme: string) {
-    localStorage.setItem('theme', theme);
-  }
-
-  protected updateTheme() {
-    this.themeSaved = localStorage.getItem('theme') || ThemeEnum.LIGHT;
-    this.toggleTheme();
+    this.themeService.toggleTheme();
   }
   
   protected updateLanguage() {
@@ -108,14 +95,13 @@ export class MenuComponent implements OnInit, OnDestroy  {
   }
 
   protected internalInit() {
-    this.screenWidth = window.innerWidth;
-    this.updateTheme();
+    this.themeService.updateTheme();
     this.updateLanguage();
     this.dropDownListClickOutsideListener();
   }
 
   @HostListener('window:resize', ['$event'])
   onWindowResize() {
-    this.screenWidth = window.innerWidth;
+    this.isResponsive = window.innerWidth < 1024;
   }
 }

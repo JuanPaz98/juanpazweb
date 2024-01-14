@@ -1,4 +1,6 @@
 <section class="about" id="about">
     <h2>{{translations.about.title}}</h2>
-    <p>{{translations.about.description}}</p> 
+    <ng-container *ngFor="let description of translations.about.description">
+        <p>{{description.paragraph}}</p> 
+    </ng-container>
 </section>

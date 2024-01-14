@@ -1,11 +1,25 @@
 <section class="skills-container" id="skills">
-    <h2>{{translations.skills.title}}</h2>
+    <p>{{translations.skills.description}}</p>
     <div class="scroll">
         <div class="skill-logo">
-            <img *ngFor="let skill of skills" src="{{skill.image}}">
+            <ng-container *ngFor="let skill of skills" >
+                <div class="single-skill">
+                    <div class="skill-wrapper">
+                        <img class="skill-image" src="{{skill.image}}">
+                        <p class="skill-description">{{skill.description}}</p>
+                    </div>
+                </div>
+            </ng-container>
         </div>
         <div class="skill-logo">
-            <img *ngFor="let skill of skills" src="{{skill.image}}">
+            <ng-container *ngFor="let skill of skills" >
+                <div class="single-skill">
+                    <div class="skill-wrapper">
+                        <img class="skill-image" src="{{skill.image}}">
+                        <p class="skill-description">{{skill.description}}</p>
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </section>

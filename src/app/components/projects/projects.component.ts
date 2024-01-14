@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subscription } from 'rxjs';
-import SwiperCore, { Pagination, Navigation } from "swiper";
+import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper";
 import { LanguageService } from 'src/app/services/language.service';
 
-SwiperCore.use([Pagination, Navigation]);
+SwiperCore.use([Pagination, Navigation, Autoplay]);
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -22,25 +22,18 @@ export class ProjectsComponent {
       this.projects = [
         { 
           image : '../../../assets/img/todolist.png',
-          title: this.translations.projects.first.title,
-          description : this.translations.projects.first.description,
+          title: this.translations.projects.listOfProjects[0].project.title,
+          description : this.translations.projects.listOfProjects[0].project.description,
           linkProject: 'https://juanpaz98.github.io/curso-react/',
           linkCode: 'https://github.com/JuanPaz98/curso-react'
-        },
-        {
-          image : '../../../assets/img/awesome heroes.png',
-          title: this.translations.projects.second.title,
-          description: this.translations.projects.second.description,
-          linkProject: 'https://juanpaz98.github.io/awesome-heroes/#',
-          linkCode: 'https://github.com/JuanPaz98/awesome-heroes'
         },
         {
           image : '../../../assets/img/meli-clon.png',
-          title: this.translations.projects.fourth.title,
-          description: this.translations.projects.fourth.description,
+          title: this.translations.projects.listOfProjects[1].project.title,
+          description: this.translations.projects.listOfProjects[1].project.description,
           linkProject: 'https://juanpaz98.github.io/curso-react/',
           linkCode: 'https://github.com/JuanPaz98/curso-react'
-        }
+        },
       ]
     });
   }
