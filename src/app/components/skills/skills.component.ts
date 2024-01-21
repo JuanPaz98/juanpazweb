@@ -1,8 +1,10 @@
-import { Component, ViewEncapsulation, ViewChild, OnInit } from "@angular/core";
-
-import SwiperCore, { Pagination, Navigation } from "swiper";
+import { Component, ViewEncapsulation } from "@angular/core";
 import { Subscription } from "rxjs";
+import { Skill } from "src/app/models/skill.model";
+import { Translation } from "src/app/models/translations.model";
 import { LanguageService } from "src/app/services/language.service";
+import SwiperCore, { Navigation, Pagination } from "swiper";
+
 
 SwiperCore.use([Pagination, Navigation]);
 
@@ -13,13 +15,20 @@ SwiperCore.use([Pagination, Navigation]);
   encapsulation: ViewEncapsulation.None
 })
 export class SkillsComponent {
-  translations: any;
-  skills: any[] = [];
+  translations!: Translation;
+  skills: Skill[] = [];
   private subscription: Subscription;
 
   constructor(private languageService: LanguageService) {
     this.subscription = this.languageService.getTranslations().subscribe((translations) => {
       this.translations = translations;
+      this.buildSkillsConfig();
+      
+    });
+  }
+
+  buildSkillsConfig() {
+    if (this.translations && this.translations.skills) {
       this.skills = [
         { 
           image : '../../../assets/icons/html.png',
@@ -66,6 +75,6 @@ export class SkillsComponent {
           description: this.translations.skills.scrum
         }
       ]
-    });
+    }
   }
 }

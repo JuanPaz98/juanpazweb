@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Translation } from 'src/app/models/translations.model';
 import { LanguageService } from 'src/app/services/language.service';
 import { ThemeService } from 'src/app/services/theme.service';
+import { LanguageEnum } from '../menu/enums/languages.enum';
 import { ThemeEnum } from '../menu/enums/theme.enum';
 
 @Component({
@@ -11,8 +13,12 @@ import { ThemeEnum } from '../menu/enums/theme.enum';
 })
 export class MainComponent {
 
-  translations: any;
+  translations!: Translation;
   public isDarkTheme: boolean = false;
+  public githubIcon: string = '';
+  public linkedinIcon: string = '';
+  public urlCV: string = '';
+  public downloadName: string = '';
   private languageSubsctiption?: Subscription;
   private ThemeSubsctiption?: Subscription;
 
@@ -24,6 +30,28 @@ export class MainComponent {
     });
     this.ThemeSubsctiption = this.themeService.getTheme().subscribe((theme) => {
       this.isDarkTheme = theme === ThemeEnum.LIGHT;
+      this.updateIcons(this.isDarkTheme);
     });
+  }
+
+  updateIcons(isDarkTheme: boolean) {
+    if (isDarkTheme) {
+      this.githubIcon = '../../../assets/icons/github-light.png';
+      this.linkedinIcon = '../../../assets/icons/linkedin-light.png'
+    } else {
+      this.githubIcon = '../../../assets/icons/github.png';
+      this.linkedinIcon =  '../../../assets/icons/linkedin.png'
+    }
+  }
+
+  downloadCV(): void {
+    if (this.languageService.currentLanguage === LanguageEnum.ENG) {
+      this.urlCV = '../../../assets/Juan Paz-En.pdf'
+      this.downloadName = 'JuanJoseFernandezPaz-En'
+    }
+    else if (this.languageService.currentLanguage === LanguageEnum.ESP) {
+      this.urlCV = '../../../assets/Juan Paz-Es.pdf';
+      this.downloadName = 'JuanJoseFernandezPaz-Es'
+    }
   }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { translations } from '../translations'
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LanguageEnum } from '../components/menu/enums/languages.enum';
+import { Translation } from '../models/translations.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,10 @@ import { LanguageEnum } from '../components/menu/enums/languages.enum';
 
 export class LanguageService {
   public currentLanguage: string = LanguageEnum.ENG;
-  private translations: any = {};
+  private languageTranslation!: Translation; 
+
   // @ts-ignore
-  private translationsSubject = new BehaviorSubject<any>(translations[this.currentLanguage]);
+  private translationsSubject = new BehaviorSubject<Translation>(translations[this.currentLanguage]);
 
   setLanguage(language: string) {
     this.currentLanguage = language;
@@ -20,13 +22,14 @@ export class LanguageService {
     this.saveLanguageInStorage(language);
   }
 
-  getTranslations(): Observable<any> {
+  getTranslations(): Observable<Translation> {
+    console.log(this.translationsSubject)
     return this.translationsSubject.asObservable()
   }
 
-  updateTranslations(newTranslations: any) {
-    this.translations = newTranslations;
-    this.translationsSubject.next(this.translations);
+  updateTranslations(newTranslations: Translation) {
+    this.languageTranslation = newTranslations;
+    this.translationsSubject.next(this.languageTranslation);
   }
 
   saveLanguageInStorage(language: string) {

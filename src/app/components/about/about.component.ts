@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { About } from 'src/app/models/translations.model';
 import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
@@ -9,13 +10,12 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class AboutComponent {
   
-  translations: any;
+  public about?: About;
   private subscription: Subscription;
 
   constructor(private languageService: LanguageService) {
     this.subscription = this.languageService.getTranslations().subscribe((translations) => {
-      this.translations = translations;
+      this.about = translations.about;
     });
   }
-
 }

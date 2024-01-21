@@ -9,12 +9,11 @@
         <ul class="menu-container" [class.active]="active">
             <div class="close-btn" [class.active]="active" (click)="onActiveToggle()" ></div>
             <ng-container *ngTemplateOutlet="toggleThemeContainer"></ng-container>
-            <li class="home"><a href="#main" (click)="onActiveToggle()">{{translations.menu.home}}</a></li>
-            <li class="about"><a href="#about" (click)="onActiveToggle()">{{translations.menu.about}}</a></li>
-            <li class="experience"><a href="#experience" (click)="onActiveToggle()">Experience</a></li>
-            <li class="education"><a href="#education" (click)="onActiveToggle()">Education</a></li>
-            <li class="skills"><a href="#skills" (click)="onActiveToggle()">{{translations.menu.skills}}</a></li>
-            <li class="projects"><a href="#projects" (click)="onActiveToggle()">{{translations.menu.projects}}</a></li> 
+            <li class="home"><a href="#main" (click)="onActiveToggle()">{{translations.menu!.home}}</a></li>
+            <li class="about"><a href="#about" (click)="onActiveToggle()">{{translations.menu!.about}}</a></li>
+            <li class="experience"><a href="#experience" (click)="onActiveToggle()">{{translations.menu!.experience}}</a></li>
+            <li class="education"><a href="#education" (click)="onActiveToggle()">{{translations.menu!.education}}</a></li>
+            <li class="projects"><a href="#projects" (click)="onActiveToggle()">{{translations.menu!.projects}}</a></li> 
         </ul>
     </nav>
     <ng-container *ngTemplateOutlet="wapContainer"></ng-container>
@@ -25,12 +24,11 @@
 <ng-container *ngIf="!isResponsive">
     <nav class="navbar-desk">
         <ul>
-            <li class="home"><a href="#main">{{translations.menu.home}}</a></li>
-            <li class="about"><a href="#about">{{translations.menu.about}}</a></li>
-            <li class="experience"><a href="#experience">{{translations.menu.experience}}</a></li>
-            <li class="education"><a href="#education">{{translations.menu.education}}</a></li>
-            <li class="projects"><a href="#projects">{{translations.menu.projects}}</a></li>
-            <li class="skills"><a href="#skills">{{translations.menu.skills}}</a></li>
+            <li class="home"><a href="#main">{{translations.menu!.home}}</a></li>
+            <li class="about"><a href="#about">{{translations.menu!.about}}</a></li>
+            <li class="experience"><a href="#experience">{{translations.menu!.experience}}</a></li>
+            <li class="education"><a href="#education">{{translations.menu!.education}}</a></li>
+            <li class="projects"><a href="#projects">{{translations.menu!.projects}}</a></li>
         </ul>
         <ng-container *ngTemplateOutlet="dropdownListElement"></ng-container>
         <ng-container *ngTemplateOutlet="wapContainer"></ng-container>
@@ -62,21 +60,21 @@
         [class.drop-down--active]="isDropDownClicked"
         (click)="onShowLanguageItems()">
         <div class="wrapper">
-            <img class="image-item" src="{{languageImgSource}}" alt="">
+            <img class="image-item" src="{{languageImgSource}}">
             <div class="selected">{{languageToShow}}</div>
-            <img class="arrow-down" src="{{arrowDownImgSource}}" alt="">
+            <img class="arrow-down" src="{{arrowDownImgSource}}">
         </div>
         <div class="drop-down-list">
             <ng-container *ngIf="languageSelected === 'spanish'">
                 <div class="list-item" (click)="onUpdateLanguage('english')">
-                    <img class="image-item" src="../../../assets/icons/eng.png" alt="">
-                    <div>{{translations.languages.english}}</div>
+                    <img class="image-item" src="../../../assets/icons/eng.png">
+                    <div>{{translations.languages!.english}}</div>
                 </div>
             </ng-container>
             <ng-container *ngIf="languageSelected === 'english'">
                 <div class="list-item" (click)="onUpdateLanguage('spanish')">
-                    <img class="image-item" src="../../../assets/icons/esp.png" alt="">
-                    <div>{{translations.languages.spanish}}</div>
+                    <img class="image-item" src="../../../assets/icons/esp.png">
+                    <div>{{translations.languages!.spanish}}</div>
                 </div>
             </ng-container>
         </div>

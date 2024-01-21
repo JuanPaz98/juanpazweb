@@ -1,9 +1,10 @@
 import { Component, ElementRef, HostListener, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { Translation } from 'src/app/models/translations.model';
 import { LanguageService } from 'src/app/services/language.service';
+import { ThemeService } from 'src/app/services/theme.service';
 import { LanguageEnum } from './enums/languages.enum';
 import { ThemeEnum } from './enums/theme.enum';
-import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-menu',
@@ -14,11 +15,11 @@ import { ThemeService } from 'src/app/services/theme.service';
 export class MenuComponent implements OnInit, OnDestroy  {
 
   public active = false;
-  public translations: any;
+  public translations!: Translation;
   public isDropDownClicked = false;
   public languageSelected: string = LanguageEnum.ENG;
   public languageImgSource?: string;
-  public languageToShow: string = '';
+  public languageToShow?: string;
   public themeImgSource?: string;
   public arrowDownImgSource?: string;
   public themeSaved: string = ThemeEnum.LIGHT;
@@ -33,8 +34,10 @@ export class MenuComponent implements OnInit, OnDestroy  {
     private themeService: ThemeService,
     private renderer: Renderer2 
     ) {
-    this.languageSubscription = this.languageService.getTranslations().subscribe((translations) => {
-      this.translations = translations;
+    this.languageSubscription = this.languageService.getTranslations().subscribe((translation) => {
+      if (translation) {
+        this.translations = translation;
+      }
     })
     this.themeSubscription = this.themeService.getTheme().subscribe((theme) => {
       this.themeSaved = theme;
@@ -58,13 +61,13 @@ export class MenuComponent implements OnInit, OnDestroy  {
   public onUpdateLanguage(language: string) {
     if (language == LanguageEnum.ENG) {
       this.languageService.setLanguage(LanguageEnum.ENG);
-      this.languageToShow = this.translations.languages.english;
+      this.languageToShow = this.translations.languages?.english;
       this.languageSelected = LanguageEnum.ENG;
       this.languageImgSource = '../../../assets/icons/eng.png'
     } 
     else if (language == LanguageEnum.ESP) {
       this.languageService.setLanguage(LanguageEnum.ESP);
-      this.languageToShow = this.translations.languages.spanish;
+      this.languageToShow = this.translations.languages?.spanish;
       this.languageSelected = LanguageEnum.ESP;
       this.languageImgSource = '../../../assets/icons/esp.png'
     }

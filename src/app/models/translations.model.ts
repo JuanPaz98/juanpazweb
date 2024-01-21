@@ -1,91 +1,91 @@
 export interface Translations {
-    menu: Menu;
-    about: About;
-    main: Main;
-    background: Background[];
-    skills: Skills;
-    projects: Projects;
-    button: Button;
-    languages: Languages;
+    english: Translation;
+    spanish: Translation;
+}
+export interface Translation {
+    menu?: Menu;
+    about?: About;
+    main?: Main;
+    background?: Background[];
+    skills?: Skills;
+    projects?: Projects;
+    button?: Button;
+    languages?: Languages;
 }
 
 interface Menu {
-    home: string;
-    about: string;
-    experience: string;
-    education: string;
-    projects: string;
-    skills: string;
+    home?: string;
+    about?: string;
+    experience?: string;
+    education?: string;
+    projects?: string;
+    skills?: string;
 }
 
-interface About {
-    title: string;
-    description: Description[];
+export interface About {
+    title?: string;
+    description?: Description[];
 }
 
 interface Description {
-    paragraph: string;
+    paragraph?: string;
 }
 
 interface Main {
-    mainTitle: string;
-    description: string;
+    mainTitle?: string;
+    description?: string;
 }
 
-interface Background {
-    mainTitle: string;
-    experienceList?: Experience[];
-    educationList?: Education[];
+export interface Background {
+    mainTitle?: string;
+    elementList?: TimelineElement[];
 }
 
-interface Experience {
-    title: string;
-    company: string;
-    initialDate: string;
-    finalDate: string;
-    description: string;
+export interface TimelineElement {
+    title?: string;
+    company?: string;
+    initialDate?: string;
+    finalDate?: string;
+    description?: string;
 }
 
-interface Education {
-    title: string;
-    initialDate: string;
-    finalDate: string;
-    description: string;
-}
-
-interface Skills {
-    title: string;
-    description: string;
-    html: string;
-    css: string;
-    typescript: string;
-    angular: string;
-    react: string;
-    sass: string;
-    dotNet: string;
-    umbraco: string;
-    azure: string;
-    scrum: string;
-    git: string;
+export interface Skills {
+    title?: string;
+    description?: string;
+    html?: string;
+    css?: string;
+    typescript?: string;
+    angular?: string;
+    react?: string;
+    sass?: string;
+    dotNet?: string;
+    umbraco?: string;
+    azure?: string;
+    scrum?: string;
+    git?: string;
     sql?: string;
 }
 
-interface Projects {
+export interface Projects {
     title: string;
     description: string;
-    listOfProjects: Project[];
-}
-
-interface Project {
+    listOfProjects: Project[]; 
+  }
+  
+  interface Project {
+    project: ProjectDetail;
+  }
+  
+  interface ProjectDetail {
     title: string;
     description: string;
-}
+  }
 
 interface Button {
-    link: string;
-    code: string;
-    download: string;
-    whatsapp: string;
+    link?: string;
+    code?: string;
+    download?: string;
+    whatsapp?: string;
 }
 
 interface Languages {

@@ -1,14 +1,17 @@
 <section class="main-container" id="main">
-    <figure>
-        <img src="../../../assets/img/foto_portafolio.png" alt="foto principal">
-    </figure>
+    <div class="blob">
+        <div class="image-box">
+            <img class="portafolio-image" src="../../../assets/img/foto_portafolio-no-background.png">
+        </div>
+    </div>
     <div class="description">
-        <h1 class="principal-title">{{translations.main.mainTitle}}</h1>
-        <p> {{translations.main.description}}</p>
-        <a class="download-cv" href="../../../assets/Jpaz.pdf" download="CV_JUAN_PAZ" target="_blank"class="btn-cv">{{translations.button.download}}</a>
-        <ul class="media-icons ">
-            <li><a href="https://github.com/JuanPaz98" target="_blank"><img [src]="isDarkTheme ? '../../../assets/icons/github-light.png' : '../../../assets/icons/github.png'"  alt="Instagram"></a></li>
-            <li><a href="https://www.linkedin.com/in/juanpaz98" target="_blank"><img [src]="isDarkTheme ? '../../../assets/icons/linkedin-light.png' : '../../../assets/icons/linkedin.png'"   alt="LinkedIn"></a></li>
+        <h1 class="principal-title">{{translations.main!.mainTitle}}</h1>
+        <p> {{translations.main!.description}}</p>
+        <a class="download-cv" (click)="downloadCV()" [href]="urlCV" download="{{downloadName}}" target="_blank"
+            class="btn-cv">{{translations.button!.download}}</a>
+        <ul class="media-icons">
+            <li><a href="https://github.com/JuanPaz98" target="_blank"><img [src]="githubIcon" alt="github image"></a></li>
+            <li><a href="https://www.linkedin.com/in/juanpaz98" target="_blank"><img [src]="linkedinIcon" alt="LinkedIn image"></a></li>
         </ul>
     </div>
 </section>

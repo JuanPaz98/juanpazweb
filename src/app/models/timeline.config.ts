@@ -1,12 +1,6 @@
-export interface TimelineConfig {
-    mainTitle: string;
-    elements : TimelineElement[];
-}
+import { TimelineElement } from "./translations.model";
 
-export interface TimelineElement {
-    title: string;
-    company?: string;
-    initialDate: string;
-    finalDate: string;
-    description: string;
+export interface TimelineConfig {
+    mainTitle?: string;
+    elements?: TimelineElement[];
 }

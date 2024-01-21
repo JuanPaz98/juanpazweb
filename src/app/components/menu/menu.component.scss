@@ -151,9 +151,6 @@
         display: flex;
         gap: 0.5rem;
         align-items: center;
-        .arrow-down {
-            // TODO: white in dark mode
-        }
     }
     .drop-down-list {
         position: absolute;
@@ -303,9 +300,6 @@
             display: flex;
             gap: 0.5rem;
             align-items: center;
-            .arrow-down {
-                // TODO: white in dark mode
-            }
         }
         .drop-down-list {
             position: absolute;
