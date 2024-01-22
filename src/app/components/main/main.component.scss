@@ -13,7 +13,7 @@
                 align-items: center;
                 justify-content: center;
                 width: 40em;
-                height: 40em;
+                height: 35em;
                 background-position: center center;
                 animation: blobAnimation 5s ease-in-out infinite;
                 transition: all 1s ease-in-out;
@@ -70,6 +70,11 @@
         padding: var(--medium-padding);
         padding-top: 13rem;
         position: relative;
+        .blob{
+            .image-box {
+                height: 40em;
+            }
+        }
         .btn-cv{
             width: 60%;
             margin: 2rem auto;
