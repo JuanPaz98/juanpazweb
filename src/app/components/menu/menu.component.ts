@@ -98,6 +98,7 @@ export class MenuComponent implements OnInit, OnDestroy  {
   }
 
   protected internalInit() {
+    this.isResponsive = window.innerWidth < 1024;
     this.themeService.updateTheme();
     this.updateLanguage();
     this.dropDownListClickOutsideListener();
