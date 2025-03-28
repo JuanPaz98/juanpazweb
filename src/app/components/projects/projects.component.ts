@@ -47,8 +47,8 @@ export class ProjectsComponent implements OnInit {
           image : '../../../assets/img/Todo-app-image.png',
           title: this.translations.projects.listOfProjects[0].project.title,
           description : this.translations.projects.listOfProjects[0].project.description,
-          linkProject: 'https://juanpaz98.github.io/curso-react/',
-          linkCode: 'https://github.com/JuanPaz98/curso-react',
+          linkProject: 'https://jptodos.azurewebsites.net',
+          linkCode: 'https://github.com/JuanPaz98/TodosMVC',
           projectEnum: ProjectsEnum.TODOS
         },
         {
