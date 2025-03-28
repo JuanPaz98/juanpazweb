@@ -6,7 +6,8 @@
     <swiper [slidesPerView]="1" 
         [spaceBetween]="20" 
         [loop]="true"
-        [autoplay]="{ delay: 5000, pauseOnMouseEnter: true, disableOnInteraction: false}" [pagination]="true"
+        [autoplay]="modalIsOpen ? { delay: 3600000 } : { delay: 5000, pauseOnMouseEnter: true, disableOnInteraction: false }" 
+        [pagination]="true"
         [navigation]="true" class="swiper-container">
         <ng-container *ngFor="let project of projects">
             <ng-template swiperSlide>
@@ -20,16 +21,25 @@
                             <p class="project-description">{{project.description}}</p>
                         </div>
                         <div class="btn-projects-container">
-                            <a class="btn-projects" href="{{project.linkProject}}" target="_blank">
-                                <button class="link-projects">
+                            <a class="link-projects" href="{{project.linkProject}}" target="_blank">
+                                <img src="../../../assets/icons/web_icon.svg" alt="play vid">
+                                <span>
                                     {{translations.button?.link}}
-                                </button>
+                                </span>
                             </a>
-                            <a class="btn-projects" href="{{project.linkCode}}" target="_blank">
-                                <button class="link-projects">
+                            <a class="link-projects" href="{{project.linkCode}}" target="_blank">
+                                <img src="../../../assets/icons/code_icon.svg" alt="repository icon">
+                                <span>
                                     {{translations.button?.code}}
-                                </button>
+                                </span>
                             </a>
+    
+                            <button class="link-projects" (click)="openDialog(project)"> 
+                                <img src="../../../assets/icons/play_vid_icon.svg" alt="play vid">
+                                <span>
+                                    Demo
+                                </span>
+                            </button>
                         </div>
                     </div>
                 </div>

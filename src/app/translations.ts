@@ -14,22 +14,22 @@ export const translations = {
             title: 'About Me',
             description: [
                 {
-                    paragraph: 'I am a Frontend Developer, I am 25 years old, living in the city of Cali, Colombia.'
-                },
-                {
-                    paragraph : 'Currently, I am in Newshore, a software company focused on airlines solutions. I work as a Frontend developer UI in the Master Product Team, developing features in the main pages and section such as home, promotes, banners, search, flights and passenger forms.'
+                    paragraph: 'I am a FullStack Developer, I am 26 years old, living in the city of Cali, Colombia.'
                 },
                 {
                     paragraph: 'I graduated from the MisiónTic 2022 program at the Universidad del Norte, an intensive bootcamp focused on web development. Throughout the program, I learned about python, HTML, CSS, JS, React, SQLite and programming logic and problem-solving.  I continue my self-study, dedicating time on platforms like YouTube, Platzi, and Udemy.'
                 },
                 {
-                    paragraph: 'My main goal for this year is got a full English job and increase my seniority.'
+                    paragraph : 'I like to spend my free time working on personal projects, learning new technologies, riding my bike, and doing exercise.'
+                },
+                {
+                    paragraph: 'My main goal for this year is increase my seniority and get a new job where I can speak English all the time.'
                 }
             ]
         },
         main: {
             mainTitle: "I'm Juan Paz",
-            description: "Frontend Web Developer with over 2 years experience in core technologies such as HTML, CSS, and JS, with a strong focus primarily on Angular, which I work with on a daily basis. I also have knowledge in accessibility, Umbraco CMS and .Net. In terms of soft skills, I excel in empathy, commitment, and teamwork."
+            description: "Full Stack Developer with 3 years of experience specializing in Angular and .NET, building scalable, high-performance web applications. I develop dynamic, accessible UIs with Angular and well-structured APIs in .NET, following clean architecture and SOLID principles. I like to be committed, empathetic, and a team player, always striving to deliver high-quality solutions."
         },
         background: [
             {
@@ -39,8 +39,8 @@ export const translations = {
                         title: 'Frontend Developer',
                         company: 'Newshore',
                         initialDate: 'Nov 2022',
-                        finalDate: 'Present',
-                        description: 'UI Developer in the Master Product area, responsible for developing features on the main pages and sections of the application, such as the home page, promotion pages, banners, flight selection, and passenger form. My primary responsibilities encompass: Development of user stories with client-requested requirements, adding value to the product. Creation of components, services, and some functionalities with Angular. To implement accessibility across various sections and components of our product. Creation of macros, repositories, and content in Umbraco CMS and .Net.'
+                        finalDate: 'Feb 2025',
+                        description: 'UI Developer in the Master Product area, responsible for developing features on the main pages and sections of the application, such as the home page, promotion pages, banners, flight selection, and passenger form. My primary responsibilities encompass: Development of user stories with client-requested requirements, adding value to the product. Creation of components, services, and functionalities with Angular. To implement accessibility across various sections and components of our product. Creation of macros, repositories, and content in Umbraco CMS and .Net.'
                     },
                     {
                         title: 'Information Technology Support Assistant',
@@ -93,12 +93,12 @@ export const translations = {
         },
         projects: {
             title: 'My Projects',
-            description: 'Sometimes I spend my free time in some personal projects. These are some of them:',
+            description: 'I like spending my free time in some personal projects. These are some of them:',
             listOfProjects: [
                 { 
                     project: {
-                        title: 'To-Do List',
-                        description: 'Basic To-Do list made with React, saving data in local storage.'
+                        title: 'To-Do App',
+                        description: 'A To-Do list application built with .NET MVC and SQL Server, hosted on Azure. Features JWT-based authentication and enhanced security using Azure Key Vault.'
                     }
                 },
                 { 
@@ -128,7 +128,7 @@ export const translations = {
             about: 'Sobre Mi',
             experience: 'Experiencia',
             education: 'Educación',
-            projects: 'proyectos',
+            projects: 'Proyectos',
             skills: 'Habilidades',
         },
         about: {
@@ -217,8 +217,8 @@ export const translations = {
             listOfProjects: [
                 { 
                     project: {
-                        title: 'To-Do List',
-                        description: 'Aplicación básica de tareas, hecha con React y guardado de información en local storage.'
+                        title: 'To-Do App',
+                        description: 'Aplicación de lista de tareas desarrollada con .NET MVC y SQL Server, alojada en Azure. Implementa autenticación con JWT y seguridad mejorada mediante Azure Key Vault.'
                     }
                 },
                 { 

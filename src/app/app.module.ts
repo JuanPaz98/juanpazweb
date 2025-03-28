@@ -12,6 +12,9 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { TimelineComponent } from './components/timeline/timeline';
 import { BackgroundComponent } from './components/background/background.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,14 @@ import { BackgroundComponent } from './components/background/background.componen
     SkillsComponent,
     TimelineComponent,
     BackgroundComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SwiperModule,
+    MatDialogModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

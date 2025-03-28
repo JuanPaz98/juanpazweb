@@ -4,4 +4,5 @@ export interface ProjectConfig {
     description : string;
     linkProject: string;
     linkCode: string;
+    projectEnum: string;
 }

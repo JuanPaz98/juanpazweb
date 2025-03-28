@@ -23,7 +23,6 @@ export class LanguageService {
   }
 
   getTranslations(): Observable<Translation> {
-    console.log(this.translationsSubject)
     return this.translationsSubject.asObservable()
   }
 

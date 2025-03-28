@@ -1,0 +1,25 @@
+<div class="dialog-container" >
+    <!-- English videos -->
+    <ng-container *ngIf="data.languageSelected == languageEnum.ENG">
+        <container-element [ngSwitch]="data.projectSelected">
+            <ng-container *ngSwitchCase="projectEnum.TODOS">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/DpcThVa2VYM?si=Zr9-c-RtDLiWiSbP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </ng-container>
+            <ng-container *ngSwitchCase="projectEnum.MELI">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tKIKlZhUadg?si=skmAifn-XIVJFaBG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </ng-container>
+          </container-element>
+    </ng-container>
+    
+    <!-- Spanish videos -->
+    <ng-container *ngIf="data.languageSelected == languageEnum.ESP">
+        <container-element [ngSwitch]="data.projectSelected">
+            <ng-container *ngSwitchCase="projectEnum.TODOS">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ndl64Q9KOeg?si=qwKXMVTqKRCl8EFF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </ng-container>
+            <ng-container *ngSwitchCase="projectEnum.MELI">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AwZ8PtoqCeU?si=0X6YSIuXYvIr2lfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </ng-container>
+          </container-element>
+    </ng-container>
+</div>
