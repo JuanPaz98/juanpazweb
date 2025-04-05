@@ -63,6 +63,30 @@ export class SkillsComponent {
           description: this.translations.skills.umbraco
         },
         {
+          image : '../../../assets/icons/Bootstrap.png',
+          description: this.translations.skills.bootstrap
+        },
+        {
+          image : '../../../assets/icons/material.png',
+          description: this.translations.skills.material
+        },
+        {
+          image : '../../../assets/icons/primeng.png',
+          description: this.translations.skills.primeNg
+        },
+        {
+          image : '../../../assets/icons/keycloak.png',
+          description: this.translations.skills.keycloak
+        },
+        {
+          image : '../../../assets/icons/redis.png',
+          description: this.translations.skills.redis
+        },
+        {
+          image : '../../../assets/icons/docker.png',
+          description: this.translations.skills.docker
+        },
+        {
           image : '../../../assets/icons/azure.png',
           description: this.translations.skills.azure
         },

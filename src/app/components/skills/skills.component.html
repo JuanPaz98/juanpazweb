@@ -1,11 +1,10 @@
 <section class="skills-container" id="skills">
-    <p>{{translations.skills?.description}}</p>
     <div class="scroll">
         <div class="skill-logo">
             <ng-container *ngFor="let skill of skills" >
                 <div class="single-skill">
                     <div class="skill-wrapper">
-                        <img class="skill-image" src="{{skill.image}}">
+                        <img class="skill-image" src="{{skill.image}}" alt="{{skill.description}}">
                         <p class="skill-description">{{skill.description}}</p>
                     </div>
                 </div>
@@ -15,7 +14,7 @@
             <ng-container *ngFor="let skill of skills" >
                 <div class="single-skill">
                     <div class="skill-wrapper">
-                        <img class="skill-image" src="{{skill.image}}">
+                        <img class="skill-image" src="{{skill.image}}" alt="{{skill.description}}">
                         <p class="skill-description">{{skill.description}}</p>
                     </div>
                 </div>

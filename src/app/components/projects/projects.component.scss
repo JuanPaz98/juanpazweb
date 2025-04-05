@@ -1,7 +1,7 @@
 
 .projects-section {
-    padding-top: 3rem;
     padding: 0 var(--padding);
+    padding-top: 3rem;
     h2 {
         margin-bottom: 0.5em;
     }
@@ -80,7 +80,8 @@
 //Responsive para Tablets
 @media (min-width: 768px){
     .projects-section {
-        padding: 0 var(--medium-padding)
+        padding: 0 var(--medium-padding);
+        padding-top: 3rem;
     }
     .swiper-container{
         padding: 1rem;

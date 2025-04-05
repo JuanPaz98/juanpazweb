@@ -91,7 +91,7 @@ export const translations = {
             react:'React',
             sass: 'Sass',
             bootstrap: 'Bootstrap',
-            material: 'Angular Material',
+            material: 'A. Material',
             primeNg: 'PrimeNg',
             dotNet: 'Asp .Net',
             umbraco: 'Umbraco',
@@ -153,7 +153,7 @@ export const translations = {
             title: 'Sobre Mi',
             description: [
                 {
-                    paragraph: 'Soy Desarrollador FullStack, tengo 26 años y vivo en la ciudad de Cali, Colombia'
+                    paragraph: 'Soy Desarrollador FullStack, tengo 26 años y vivo en la ciudad de Cali, Colombia.'
                 },
                 {
                     paragraph : 'Actualmente trabajo como desarrollador freelance y estoy cursando los últimos semestres de la carrera de Ingeniería de Sistemas. Tengo tres años de experiencia en desarrollo de software y más de siete años en la industria tecnológica. También me gradué del programa MisiónTIC 2022 de la Universidad del Norte, un bootcamp intensivo de desarrollo web.'
@@ -230,7 +230,7 @@ export const translations = {
             react:'React',
             sass: 'Sass',
             bootstrap: 'Bootstrap',
-            material: 'Angular Material',
+            material: 'A. Material',
             primeNg: 'PrimeNg',
             dotNet: 'Asp .Net',
             umbraco: 'Umbraco',

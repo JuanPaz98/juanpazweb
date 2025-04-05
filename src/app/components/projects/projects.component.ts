@@ -53,15 +53,15 @@ export class ProjectsComponent implements OnInit {
           projectEnum: ProjectsEnum.TODOS
         },
         {
-          image : '../../../assets/img/meli-clon.png',
+          image : '../../../assets/img/rickmorty.png',
           title: this.translations.projects.listOfProjects[1].project.title,
           description: this.translations.projects.listOfProjects[1].project.description,
-          linkProject: 'https://meli-clon.web.app/',
-          linkCode: 'https://github.com/JuanPaz98/meli-clon',
+          linkProject: 'https://deft-squirrel-0b8549.netlify.app/',
+          linkCode: 'https://github.com/JuanPaz98/Rick-And-Morty-Angular',
           hasDemo: false,
         },
         {
-          image : '../../../assets/img/meli-clon.png',
+          image : '../../../assets/img/StockFlow_thumb.png',
           title: this.translations.projects.listOfProjects[2].project.title,
           description: this.translations.projects.listOfProjects[2].project.description,
           linkCode: 'https://github.com/JuanPaz98/StockFlow',

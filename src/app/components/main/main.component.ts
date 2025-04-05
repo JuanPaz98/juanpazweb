@@ -46,12 +46,12 @@ export class MainComponent {
 
   downloadCV(): void {
     if (this.languageService.currentLanguage === LanguageEnum.ENG) {
-      this.urlCV = '../../../assets/Juan Paz-En.pdf'
-      this.downloadName = 'JuanJoseFernandezPaz-En'
+      this.urlCV = '../../../assets/Juan_Jose_F_Paz_En.pdf'
+      this.downloadName = 'Juan_Jose_F_Paz_En'
     }
     else if (this.languageService.currentLanguage === LanguageEnum.ESP) {
-      this.urlCV = '../../../assets/Juan Paz-Es.pdf';
-      this.downloadName = 'JuanJoseFernandezPaz-Es'
+      this.urlCV = '../../../assets/Juan_Jose_F_Paz_Es.pdf';
+      this.downloadName = 'Juan_Jose_F_Paz_Es'
     }
   }
 }

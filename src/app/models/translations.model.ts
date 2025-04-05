@@ -58,8 +58,14 @@ export interface Skills {
     angular?: string;
     react?: string;
     sass?: string;
+    bootstrap?: string;
+    material?: string;
+    primeNg?: string;
     dotNet?: string;
     umbraco?: string;
+    redis?: string;
+    keycloak?: string;
+    docker?: string;
     azure?: string;
     scrum?: string;
     git?: string;
