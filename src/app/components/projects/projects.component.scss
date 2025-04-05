@@ -45,6 +45,7 @@
         text-align: center;
         margin-bottom: 2rem;
         .project-title {
+            margin: 1rem 0;
             font-size: calc(1.5em + 1vw)
         }
         .project-description {
@@ -123,6 +124,7 @@
     }
     .right-column {
         width: 50%;
+        margin-right: 2rem;
         .project-description-container {
             .project-title {
                 font-size: calc(1.3em + 1vw);

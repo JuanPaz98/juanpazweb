@@ -17,19 +17,19 @@ export const translations = {
                     paragraph: 'I am a FullStack Developer, I am 26 years old, living in the city of Cali, Colombia.'
                 },
                 {
-                    paragraph: 'I graduated from the MisiónTic 2022 program at the Universidad del Norte, an intensive bootcamp focused on web development. Throughout the program, I learned about python, HTML, CSS, JS, React, SQLite and programming logic and problem-solving.  I continue my self-study, dedicating time on platforms like YouTube, Platzi, and Udemy.'
+                    paragraph: "I am currently working as a freelance developer and I am in the last semesters of my Systems Engineering degree. I have three years of experience in software development and more than seven years in the technology industry. I also graduated from Universidad del Norte's MisiónTIC 2022 program, an intensive web development bootcamp."
                 },
                 {
-                    paragraph : 'I like to spend my free time working on personal projects, learning new technologies, riding my bike, and doing exercise.'
+                    paragraph : 'In my free time, I enjoy working on personal projects, exploring new technologies, riding motorcycle, exercising, and spending time with my family.'
                 },
                 {
-                    paragraph: 'My main goal for this year is increase my seniority and get a new job where I can speak English all the time.'
+                    paragraph: 'My main goal this year is to increase my seniority and secure a new position where I can use English on a daily basis.'
                 }
             ]
         },
         main: {
             mainTitle: "I'm Juan Paz",
-            description: "Full Stack Developer with 3 years of experience specializing in Angular and .NET, building scalable, high-performance web applications. I develop dynamic, accessible UIs with Angular and well-structured APIs in .NET, following clean architecture and SOLID principles. I like to be committed, empathetic, and a team player, always striving to deliver high-quality solutions."
+            description: "Full Stack Developer with 3 years of experience specializing in Angular and .NET, building scalable, high-performance web applications. I develop dynamic, accessible UIs with Angular and well-structured APIs in .NET, following clean architecture, applying design patterns and SOLID principles. I like to be committed, empathetic, and a team player, always striving to deliver high-quality solutions."
         },
         background: [
             {
@@ -61,6 +61,12 @@ export const translations = {
                 mainTitle: 'Education',
                 elementList: [
                     {
+                        title: "Systems Engineer",
+                        initialDate: 'Mar 2025',
+                        finalDate: 'Present',
+                        description: 'Systems Engineering student at Universidad INCCA de Colombia, currently in the final semesters of the program. The degree provides a solid foundation in computer science, information systems management, and process analysis, with an emphasis on software development and web technologies.'
+                    },
+                    {
                         title: 'Web Developer',
                         initialDate: 'Mar 2021',
                         finalDate: 'Dec 2021',
@@ -84,8 +90,14 @@ export const translations = {
             angular: 'Angular',
             react:'React',
             sass: 'Sass',
+            bootstrap: 'Bootstrap',
+            material: 'Angular Material',
+            primeNg: 'PrimeNg',
             dotNet: 'Asp .Net',
             umbraco: 'Umbraco',
+            redis: 'Redis',
+            keycloak: 'Keycloak',
+            docker: 'Docker',
             azure: 'Azure',
             scrum: 'Scrum',
             git: 'Git',
@@ -103,8 +115,14 @@ export const translations = {
                 },
                 { 
                     project: {
-                        title: 'Meli Clon',
-                        description: 'Currently, I am working on this project, It is a little Mercado Libre clone. Built in Angular and .Net'
+                        title: 'Rick and Morty App',
+                        description: 'Web application built with Angular and Bootstrap that consumes the Rick and Morty API. It is fully responsive, includes pagination, and allows users to search for characters.'
+                    }
+                },
+                { 
+                    project: {
+                        title: 'Stock Flow App (In development)',
+                        description: 'Application for order and inventory management. Built with a .NET API using clean architecture, CQRS, Redis caching, and authentication via Keycloak.'
                     }
                 }
             ]
@@ -135,22 +153,22 @@ export const translations = {
             title: 'Sobre Mi',
             description: [
                 {
-                    paragraph: 'Soy Desarrollador Web Frontend, tengo 25 años y vivo en la ciudad de Cali, Colombia'
+                    paragraph: 'Soy Desarrollador FullStack, tengo 26 años y vivo en la ciudad de Cali, Colombia'
                 },
                 {
-                    paragraph : 'Actualmente, estoy trabajando en Newshore, una empresa de desarrollo de software para aerolíneas, mi rol es de Desarrollador UI, en el equipo de Master Product, desarrollando funcionalidades en las páginas principales como la home, las páginas de promociones, banners, el buscador, selección de vuelos y formulario de pasajeros.'
+                    paragraph : 'Actualmente trabajo como desarrollador freelance y estoy cursando los últimos semestres de la carrera de Ingeniería de Sistemas. Tengo tres años de experiencia en desarrollo de software y más de siete años en la industria tecnológica. También me gradué del programa MisiónTIC 2022 de la Universidad del Norte, un bootcamp intensivo de desarrollo web.'
                 }, 
                 {
-                    paragraph : 'Soy egresado del programa MisiónTic 2022, en la Universidad del Norte. Bootcamp intensivo enfocado en el desarrollo web. Aquí aprendí sobre tecnologías como Python, HTML, CSS, JavaScript, React, SQLite, y adquirí bases de lógica de programación y resolución de problemas. Continúo estudiando constantemente por mi cuenta aprendiendo cosas nuevas en plataformas como Youtube, Platzi y Udemy.'
+                    paragraph : 'En mi tiempo libre, disfruto trabajar en proyectos personales, aprender nuevas tecnologías, rodar en mi moto, hacer ejercicio y compartir con mi familia.'
                 },
                 {
-                    paragraph: 'Mi principal objetivo para este año es obtener un trabajo totalmente en ingles e incrementar mi seniority.'                
+                    paragraph: 'Mi objetivo principal este año es aumentar mi nivel de experiencia y conseguir un nuevo empleo donde pueda usar el inglés de forma constante.'                
                 }
             ]
         },
         main: {
             mainTitle: 'Soy Juan Paz',
-            description: 'Desarrollador Frontend con más de 2 años de experiencia en tecnologías base como HTML, CSS, JS, con fortaleza principalmente en Angular, framework con el que trabajo a diario. Adicional cuento con conocimientos en Accesibilidad, Umbraco CMS y .Net. En mis habilidades blandas destacan mi empatía, compromiso y trabajo en equipo.'
+            description: 'Desarrollador Full Stack con 3 años de experiencia, especializado en Angular y .NET, creando aplicaciones web escalables y de alto rendimiento. Desarrollo interfaces de usuario dinámicas y accesibles con Angular, y APIs bien estructuradas en .NET, aplicando clean architecture, patrones de diseño y principios SOLID. Soy comprometido, empático y con habilidad para el trabajo en equipo, enfocado en entregar software de calidad.'
         },
         background: [
             {
@@ -160,18 +178,18 @@ export const translations = {
                         title: 'Desarrollador Frontend',
                         company: 'Newshore',
                         initialDate: 'Nov 2022',
-                        finalDate: 'Presente',
+                        finalDate: 'Feb 2025',
                         description: 'Desarrollador UI el área de Master Product, responsable de desarrollar funcionalidades en las páginas principales como la home, páginas de promociones, banners, selección de vuelos y formularios de pasajeros. Entre mis principales responsabilidades se encuentran: Desarrollar historias de usuario basado en los requerimientos del cliente, agregando valor al producto. Creación de componentes, servicios y varias funcionalidades con Angular. Implementar accesibilidad en varias secciones y componentes del producto. Creación de macros, repositorios y contenido en Umbraco CMS y .Net.'
                     },
                     {
-                        title: 'Auxiliar de soporte ténico',
+                        title: 'Auxiliar de soporte técnico',
                         company: 'Quala S.A.',
                         initialDate: 'Mar 2021',
                         finalDate: 'Nov 2022',
                         description: 'Brindar soporte técnico remoto y en sitio para equipos de cómputo, dispositivos móviles (Honeywell, Motorola-Zebra), e impresión para el distrito Cali y sus agencias Pasto y Popayán. Manejo de inventario y solución de incidentes y requerimientos de usuario.'
                     },
                     {
-                        title: 'SET Level 2 Support',
+                        title: 'Soporte SET Nivel 2',
                         company: 'ARUS',
                         initialDate: 'Feb 2019',
                         finalDate: 'Mar 2021',
@@ -182,13 +200,19 @@ export const translations = {
                 mainTitle: 'Educación',
                 elementList: [
                     {
+                        title: 'Ingeniero de Sistemas',
+                        initialDate: 'Mar 2025',
+                        finalDate: 'Presente',
+                        description: 'Estudiante de Ingeniería de Sistemas en la Universidad INCCA de Colombia, actualmente cursando los últimos semestres de formación. La carrera ofrece una sólida base en ciencias computacionales, gestión de sistemas de información y análisis de procesos. Con énfasis en desarrollo de software y tecnologías web.'
+                    },
+                    {
                         title: 'Desarrollador Web',
                         initialDate: 'Mar 2021',
                         finalDate: 'Dic 2021',
                         description: 'Bootcamp intensivo enfocado en el desarrollo web con énfasis en tecnologías como HTML, CSS, JavaScript, React, Python, Java y SQLite.'
                     },
                     {
-                        title: 'Técnico en sistemas',
+                        title: 'Técnico en Sistemas',
                         initialDate: 'Feb 2017',
                         finalDate: 'Feb 2018',
                         description: 'Énfasis en manejo de equipos de cómputo, formateo, instalación de software, y soporte a aplicaciones y sistemas operativos.'
@@ -205,11 +229,18 @@ export const translations = {
             angular: 'Angular',
             react:'React',
             sass: 'Sass',
+            bootstrap: 'Bootstrap',
+            material: 'Angular Material',
+            primeNg: 'PrimeNg',
             dotNet: 'Asp .Net',
             umbraco: 'Umbraco',
+            redis: 'Redis',
+            keycloak: 'Keycloak',
+            docker: 'Docker',
             azure: 'Azure',
             scrum: 'Scrum',
             git: 'Git',
+            sql: 'SQL'
         },
         projects: {
             title: 'Mis Proyectos',
@@ -223,8 +254,14 @@ export const translations = {
                 },
                 { 
                     project: {
-                        title: 'Meli Clon',
-                        description: 'Actualmente, estoy trabajando en este proyecto. Es un pequeño clon de Mercado Libre. Construido en Angular y .Net'
+                        title: 'Rick and Morty App',
+                        description: 'Aplicación web desarrollada con Angular y Bootstrap, que consume la API de Rick and Morty. Es responsive, tiene paginación y permite buscar personajes.'
+                    }
+                },
+                { 
+                    project: {
+                        title: 'Stock Flow App (En desarrollo)',
+                        description: 'Aplicación para la gestión de pedidos e inventario. API en .NET, arquitectura limpia, CQRS, caché con Redis y autenticación con Keycloak.'
                     }
                 }
             ]

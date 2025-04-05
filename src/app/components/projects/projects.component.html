@@ -21,12 +21,14 @@
                             <p class="project-description">{{project.description}}</p>
                         </div>
                         <div class="btn-projects-container">
-                            <a class="link-projects" href="{{project.linkProject}}" target="_blank">
-                                <img src="../../../assets/icons/web_icon.svg" alt="play vid">
-                                <span>
-                                    {{translations.button?.link}}
-                                </span>
-                            </a>
+                            <ng-container *ngIf="project.linkProject">
+                                <a class="link-projects" href="{{project.linkProject}}" target="_blank">
+                                    <img src="../../../assets/icons/web_icon.svg" alt="play vid">
+                                    <span>
+                                        {{translations.button?.link}}
+                                    </span>
+                                </a>
+                            </ng-container>
                             <a class="link-projects" href="{{project.linkCode}}" target="_blank">
                                 <img src="../../../assets/icons/code_icon.svg" alt="repository icon">
                                 <span>
@@ -34,12 +36,14 @@
                                 </span>
                             </a>
     
-                            <button class="link-projects" (click)="openDialog(project)"> 
-                                <img src="../../../assets/icons/play_vid_icon.svg" alt="play vid">
-                                <span>
-                                    Demo
-                                </span>
-                            </button>
+                            <ng-container *ngIf="project.hasDemo">
+                                <button class="link-projects" (click)="openDialog(project)"> 
+                                    <img src="../../../assets/icons/play_vid_icon.svg" alt="play vid">
+                                    <span>
+                                        Demo
+                                    </span>
+                                </button>
+                            </ng-container>
                         </div>
                     </div>
                 </div>

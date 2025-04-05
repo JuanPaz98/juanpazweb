@@ -2,7 +2,8 @@ export interface ProjectConfig {
     image : string;
     title: string;
     description : string;
-    linkProject: string;
+    linkProject?: string;
     linkCode: string;
-    projectEnum: string;
+    hasDemo?: boolean;
+    projectEnum?: string;
 }

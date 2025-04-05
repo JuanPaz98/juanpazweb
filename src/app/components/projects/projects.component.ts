@@ -49,6 +49,7 @@ export class ProjectsComponent implements OnInit {
           description : this.translations.projects.listOfProjects[0].project.description,
           linkProject: 'https://jptodos.azurewebsites.net',
           linkCode: 'https://github.com/JuanPaz98/TodosMVC',
+          hasDemo: true,
           projectEnum: ProjectsEnum.TODOS
         },
         {
@@ -57,7 +58,14 @@ export class ProjectsComponent implements OnInit {
           description: this.translations.projects.listOfProjects[1].project.description,
           linkProject: 'https://meli-clon.web.app/',
           linkCode: 'https://github.com/JuanPaz98/meli-clon',
-          projectEnum: ProjectsEnum.MELI
+          hasDemo: false,
+        },
+        {
+          image : '../../../assets/img/meli-clon.png',
+          title: this.translations.projects.listOfProjects[2].project.title,
+          description: this.translations.projects.listOfProjects[2].project.description,
+          linkCode: 'https://github.com/JuanPaz98/StockFlow',
+          hasDemo: false,
         },
       ]
     }

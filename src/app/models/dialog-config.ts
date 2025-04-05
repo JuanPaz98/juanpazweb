@@ -1,5 +1,5 @@
 export interface DialogConfig {
     isResponsive: boolean;
     languageSelected: string;
-    projectSelected: string;
+    projectSelected?: string;
 }
