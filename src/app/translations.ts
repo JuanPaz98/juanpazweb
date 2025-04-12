@@ -36,11 +36,25 @@ export const translations = {
                 mainTitle: 'Experience',
                 elementList: [
                     {
+                        title: 'Freelance Developer',
+                        company: 'Jirka IT Solutions',
+                        initialDate: 'Mar 2025',
+                        finalDate: 'Present',
+                        description: 'Responsible for developing responsive and reusable UI components using Angular to support client products. Involved in debugging and resolving issues across the frontend and parts of the backend to maintain system stability. Also handle integration and testing of APIs to ensure efficient communication between application layers.'
+                    },
+                    {
                         title: 'Frontend Developer',
                         company: 'Newshore',
                         initialDate: 'Nov 2022',
                         finalDate: 'Feb 2025',
                         description: 'UI Developer in the Master Product area, responsible for developing features on the main pages and sections of the application, such as the home page, promotion pages, banners, flight selection, and passenger form. My primary responsibilities encompass: Development of user stories with client-requested requirements, adding value to the product. Creation of components, services, and functionalities with Angular. To implement accessibility across various sections and components of our product. Creation of macros, repositories, and content in Umbraco CMS and .Net.'
+                    },
+                    {
+                        title: 'Desarrollador de Software',
+                        company: 'Poliedro Software',
+                        initialDate: 'May 2022',
+                        finalDate: 'Oct 2022',
+                        description: 'Responsible for developing user stories based on client requirements to deliver valuable product features. Builds UI components and API endpoints, while also handling bug fixes across both frontend and backend. Continuously improves skills in Angular and .NET through hands-on development.'
                     },
                     {
                         title: 'Information Technology Support Assistant',
@@ -175,11 +189,25 @@ export const translations = {
                 mainTitle: 'Experiencia',
                 elementList: [
                     {
+                        title: 'Desarrollador Freelance',
+                        company: 'Jirka IT Solutions',
+                        initialDate: 'Mar 2025',
+                        finalDate: 'Actualidad',
+                        description: 'Responsable del desarrollo de componentes de interfaz de usuario responsivos y reutilizables utilizando Angular para los productos del cliente. Depuración y resolución de errores tanto en el frontend como en partes del backend para garantizar la estabilidad del sistema. Además, integración y pruebas de APIs para asegurar una comunicación eficiente entre las capas de la aplicación.'
+                    },
+                    {
                         title: 'Desarrollador Frontend',
                         company: 'Newshore',
                         initialDate: 'Nov 2022',
                         finalDate: 'Feb 2025',
                         description: 'Desarrollador UI el área de Master Product, responsable de desarrollar funcionalidades en las páginas principales como la home, páginas de promociones, banners, selección de vuelos y formularios de pasajeros. Entre mis principales responsabilidades se encuentran: Desarrollar historias de usuario basado en los requerimientos del cliente, agregando valor al producto. Creación de componentes, servicios y varias funcionalidades con Angular. Implementar accesibilidad en varias secciones y componentes del producto. Creación de macros, repositorios y contenido en Umbraco CMS y .Net.'
+                    },
+                    {
+                        title: 'Desarrollador de Software',
+                        company: 'Poliedro Software',
+                        initialDate: 'May 2022',
+                        finalDate: 'Oct 2022',
+                        description: 'Responsable del desarrollo de historias de usuario basadas en los requerimientos del cliente para entregar funcionalidades de valor al producto. Construcción de componentes de interfaz y endpoints de API, además de la resolución de errores tanto en frontend como en backend. Mejora continua de habilidades en Angular y .NET mediante el desarrollo práctico.'
                     },
                     {
                         title: 'Auxiliar de soporte técnico',
