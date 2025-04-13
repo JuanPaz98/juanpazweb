@@ -5,6 +5,7 @@ import { LanguageService } from 'src/app/services/language.service';
 import { ThemeService } from 'src/app/services/theme.service';
 import { LanguageEnum } from '../menu/enums/languages.enum';
 import { ThemeEnum } from '../menu/enums/theme.enum';
+import { AnalyticsService } from 'src/app/services/analytics.service';
 
 @Component({
   selector: 'app-main',
@@ -24,7 +25,9 @@ export class MainComponent {
 
   constructor(
     private languageService: LanguageService,
-    private themeService: ThemeService) {
+    private themeService: ThemeService,
+    private analyticsService: AnalyticsService
+  ) {
     this.languageSubsctiption = this.languageService.getTranslations().subscribe((translations) => {
       this.translations = translations;
     });
@@ -48,10 +51,16 @@ export class MainComponent {
     if (this.languageService.currentLanguage === LanguageEnum.ENG) {
       this.urlCV = '../../../assets/Juan_Jose_F_Paz_Eng.pdf'
       this.downloadName = 'Juan_Jose_F_Paz_Eng'
+      this.analyticsService.logButtonClick('Download_CV_English');
     }
     else if (this.languageService.currentLanguage === LanguageEnum.ESP) {
       this.urlCV = '../../../assets/Juan_Jose_F_Paz_Esp.pdf';
       this.downloadName = 'Juan_Jose_F_Paz_Esp'
+      this.analyticsService.logButtonClick('Download_CV_Spanish');
     }
+  }
+
+  public trackClick(linkName: string): void {
+    this.analyticsService.logButtonClick(linkName);
   }
 }

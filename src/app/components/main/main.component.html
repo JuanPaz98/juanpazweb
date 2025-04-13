@@ -10,8 +10,8 @@
         <a class="download-cv" (click)="downloadCV()" [href]="urlCV" download="{{downloadName}}" target="_blank"
             class="btn-cv">{{translations.button!.download}}</a>
         <ul class="media-icons">
-            <li><a href="https://github.com/JuanPaz98" target="_blank"><img [src]="githubIcon" alt="github link"></a></li>
-            <li><a href="https://www.linkedin.com/in/juanpaz98" target="_blank"><img [src]="linkedinIcon" alt="LinkedIn link"></a></li>
+            <li><a href="https://github.com/JuanPaz98" target="_blank" (click)="trackClick('github_profile')"><img [src]="githubIcon" alt="github link"></a></li>
+            <li><a href="https://www.linkedin.com/in/juanpaz98" target="_blank" (click)="trackClick('linkedin_profile')"><img [src]="linkedinIcon" alt="LinkedIn link"></a></li>
         </ul>
     </div>
 </section>

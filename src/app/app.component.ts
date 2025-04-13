@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import { filter } from "rxjs";
+import { AnalyticsService } from "./services/analytics.service";
 
 declare let gtag: Function;
 
@@ -10,13 +11,11 @@ declare let gtag: Function;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private router: Router) {
+  constructor(private router: Router, private analytics: AnalyticsService) {
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
     ).subscribe((event) => {
-      gtag('config', 'G-YRG3JWBWD7', {
-        page_path: event.urlAfterRedirects
-      });
+      this.analytics.logPageView(event.urlAfterRedirects);
     });
   }
   title = 'juanpazweb';
